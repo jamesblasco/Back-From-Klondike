@@ -1,7 +1,8 @@
-# Download this file using PowerShell v3 under Windows with the following comand:
-#
+.vs/
+Debug/
 
- Invoke-WebRequest https://gist.githubusercontent.com/kmorcinek/2710267/raw/ -OutFile .gitignore
+# Download this file using PowerShell v3 under Windows with the following comand:
+# Invoke-WebRequest https://gist.githubusercontent.com/kmorcinek/2710267/raw/ -OutFile .gitignore
 # or wget:
 # wget --no-check-certificate http://gist.githubusercontent.com/kmorcinek/2710267/raw/.gitignore
 
@@ -212,6 +213,9 @@ project.lock.json
 #####
 # End of core ignore list, below put you custom 'per project' settings (patterns or path)
 #####
-
-
-*.vs
+enc_temp_folder/
+Results_Mediano.txt
+Results_Largo.txt
+Results_Corto.txt
+*.txt
+trabajo1
