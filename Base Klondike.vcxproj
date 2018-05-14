@@ -85,6 +85,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -110,6 +111,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
@@ -117,11 +119,27 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Ejemplo.c" />
-    <ClCompile Include="GLstuff.c" />
+    <ClCompile Include="FrameTimer.cpp" />
+    <ClCompile Include="GLAdvanceFigure.cpp" />
+    <ClCompile Include="GLController.cpp" />
+    <ClCompile Include="GLFigure.cpp" />
+    <ClCompile Include="GLUtils.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="MD2File.cpp" />
+    <ClCompile Include="old.cpp" />
+    <ClCompile Include="SnowMan.cpp" />
+    <ClCompile Include="pcxLoader.cpp" />
+    <ClCompile Include="Table2.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="GLstuff.h" />
+    <ClInclude Include="FrameTimer.h" />
+    <ClInclude Include="GLAdvancedFigure.h" />
+    <ClInclude Include="GLController.h" />
+    <ClInclude Include="GLFigure.h" />
+    <ClInclude Include="glut.h" />
+    <ClInclude Include="GLUtils.h" />
+    <ClInclude Include="MD2File.h" />
+    <ClInclude Include="pcxLoader.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="klondike.bmp" />
