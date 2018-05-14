@@ -12,15 +12,6 @@
 #include "MD2File.h"
 
 
-/// if you want to ensure the model is always drawn with
-/// GL_TRIANGLES, set this to 1. If not, the model may be 
-/// rendered with triangle strips or fans. I've found that 
-/// rendering with triangles is way faster. I guess that 
-/// using glBegin & glEnd all the time slows stuff down quite 
-/// a bit :(
-#define MD2_ALWAYS_GL_TRIANGLES 0
-
-
 /// sets the frames per second that the anims occur at
 #define MD2_FRAMES_PER_SEC 5
 

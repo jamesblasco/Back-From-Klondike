@@ -22,10 +22,12 @@ int main(int argc, char* argv[]) {
 	glutKeyboardFunc(onKeyboardDown);
 	glutIdleFunc(onIdle);
 
-	init();
+	
 		
 	glEnable(GL_DEPTH_TEST);
 	glEnable(GL_TEXTURE_2D);
+	
+	init();
 
 	InitFrameTimer(); // let the frame timer commence...
 

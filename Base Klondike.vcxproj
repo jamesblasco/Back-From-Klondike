@@ -120,7 +120,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="FrameTimer.cpp" />
-    <ClCompile Include="GLAdvanceFigure.cpp" />
+    <ClCompile Include="MD2Model.cpp" />
     <ClCompile Include="GLController.cpp" />
     <ClCompile Include="GLFigure.cpp" />
     <ClCompile Include="GLUtils.cpp" />
@@ -130,16 +130,18 @@
     <ClCompile Include="SnowMan.cpp" />
     <ClCompile Include="pcxLoader.cpp" />
     <ClCompile Include="Table2.cpp" />
+    <ClCompile Include="Yoshi.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="FrameTimer.h" />
-    <ClInclude Include="GLAdvancedFigure.h" />
+    <ClInclude Include="MD2Model.h" />
     <ClInclude Include="GLController.h" />
     <ClInclude Include="GLFigure.h" />
     <ClInclude Include="glut.h" />
     <ClInclude Include="GLUtils.h" />
     <ClInclude Include="MD2File.h" />
     <ClInclude Include="pcxLoader.h" />
+    <ClInclude Include="Yoshi.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="klondike.bmp" />

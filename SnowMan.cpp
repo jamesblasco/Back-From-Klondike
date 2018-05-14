@@ -5,6 +5,7 @@
 Snowman::Snowman() {};
 
 void Snowman :: draw(){
+
 	
 	glPushMatrix();
 

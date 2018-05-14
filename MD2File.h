@@ -9,24 +9,15 @@
 /// 
 //------------------------------------------------------------------------------------
 
-#ifdef WIN32
-#pragma once
-#endif
-
 #ifndef MD2__FILE__H__
 #define MD2__FILE__H__
 
-#pragma pack(push,1)
 
 class MD2 {
 protected:
 
-	unsigned short GetNumVerts() const {
-		return GetModel()->numVertices;
-	}
-	unsigned short GetNumTriangles() const {
-		return GetModel()->numTriangles;
-	}
+	unsigned short GetNumVerts() const {return GetModel()->numVertices;	}
+	unsigned short GetNumTriangles() const {	return GetModel()->numTriangles;}
 
 	//-------------------------------------------------------------------------------
 	// MD2 data types
@@ -104,11 +95,9 @@ protected:
 
 protected:
 
-
 	//-------------------------------------------------------------------------------
 	// funcs that load and release the MD2 file (in a global buffer)
 	// 
-
 	/// this loads an MD2 into a single buffer
 	bool Load(const char* filename);
 
@@ -116,7 +105,6 @@ protected:
 	// funcs that use pointer offsets to return parts of the currently loaded MD2.
 	// this really does nothing else!
 	// 
-
 	const model*		 GetModel() const;
 	const frame*		 GetFrame(unsigned int num) const;
 	const char*			 GetSkin(unsigned int num) const;
@@ -133,7 +121,5 @@ protected:
 		m_data = 0;
 	}
 };
-
-#pragma pack(pop)
 
 #endif

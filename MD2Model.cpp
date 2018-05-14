@@ -1,5 +1,4 @@
-
-#include "GLAdvancedFigure.h"
+#include "MD2Model.h"
 
 
 #define MD2_FRAME_RATE (1.0f/MD2_FRAMES_PER_SEC)
@@ -179,69 +178,7 @@ void MD2Model::Render() const {
 
 	// if we have gl Commands in the file, use those for they are 
 	// slightly faster
-	//
-	if (!(MD2_ALWAYS_GL_TRIANGLES) &&
-		GetModel()->numGlCommands > 1)
-	{
-
-		// the Md2 stores how many DWORDS (4 byte chunks) are used
-		// We want this in bytes so we can figure out the total size
-		// of the gl command section
-		// 
-		int gl_command_data_size = 4 * GetModel()->numGlCommands;
-
-		// use pointer to walk through the data
-		unsigned char* ptr = m_data + GetModel()->offsetGlCommands;
-		unsigned char* end = ptr + gl_command_data_size;
-
-		// loop till end
-		while (ptr != end)
-		{
-			// get the command list for this strip or fan
-			glCommandList* pCommand = ((glCommandList*)((void*)ptr));
-			int num = pCommand->num;
-
-			// ignore if zero
-			if (num == 0) {
-				return; /*
-						ptr += 4;
-						continue;*/
-			}
-
-			// the primitive type to draw
-			GLenum PrimitiveType = GL_TRIANGLE_STRIP;
-
-			// if num is negative, we have to draw a triangle fan
-			if (num<0) {
-				PrimitiveType = GL_TRIANGLE_FAN;
-				num = -num;
-			}
-
-			// start drawing
-			glBegin(PrimitiveType);
-
-			// iterate through the openGL command vertices.
-			// these basically just contain a vertex index and 
-			// the UV coord data for this vertex
-			//
-			glCommandVertex* pStart = pCommand->verts;
-			glCommandVertex* pEnd = pStart + num;
-			for (; pStart != pEnd; ++pStart)
-			{
-				glTexCoord2fv(pStart->data);
-				glVertex3fv(m_Verts + 3 * pStart->vertexIndex);
-			}
-			glEnd();
-
-			// move iterator to next command
-			ptr += (4 + sizeof(glCommandVertex)*num);
-
-		}
-	}
-
-	// otherwise use triangle list
-	else
-	{
+	
 		// since the UV data in an md2 file is specified as shorts,
 		// scale the texture matrix stack accordingly to get the texture
 		// coords within the 0 to 1 range
@@ -283,7 +220,7 @@ void MD2Model::Render() const {
 		glMatrixMode(GL_TEXTURE);
 		glPopMatrix();
 		glMatrixMode(GL_MODELVIEW);
-	}
+	
 }
 
 

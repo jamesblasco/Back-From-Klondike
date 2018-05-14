@@ -1,8 +1,8 @@
 #include "GLController.h"
 #include "GLFigure.h"
-#include "FrameTimer.h"
-#include "GLAdvancedFigure.h"
+
 #include "GLUtils.h"
+#include "Yoshi.h"
 
 
 Position pos = Position();
@@ -11,14 +11,11 @@ Position mouse = Position();
 float zoom = 100.0f;
 unsigned char Buttons[3] = { 0 };
 
-MD2Model md2File;
-unsigned int md2Texture;
+Snowman snowman;
+Yoshi yoshi;
 
 void init() {
-	md2File.Load("tris.md2");
-	// write memory usage
-	std::cout << "memory usage " << (md2File.GetDataSize() / 1024.0f) << "kb\n";
-	md2Texture = MakeTexture("yoshi.pcx");
+	yoshi.init();
 	glColor3f(1, 1, 1);
 }
 
@@ -63,20 +60,20 @@ void onMotion(int x, int y)
 
 
 
-void onKeyboardDown(unsigned char key, int x, int y){
+void onKeyboardDown(unsigned char key, int x, int y) {
 	switch (key) {
-		case 'q':
-		case ESC:
-			exit(1);
-		case 'a':
-			/* do something */;
-			break;
+	case 'q':
+	case ESC:
+		exit(1);
+	case 'a':
+		/* do something */;
+		break;
 	}
 	glutPostRedisplay();
 }
 
 
-void onResize(int w, int h){
+void onResize(int w, int h) {
 	if (w == 0)	h = 1; // prevent divide by 0 error when minimised
 	glViewport(0, 0, w, h);
 	glMatrixMode(GL_PROJECTION);
@@ -86,48 +83,24 @@ void onResize(int w, int h){
 	glLoadIdentity();
 }
 
-Snowman snowman = Snowman();
-
-void onDisplay(){
+void onDisplay() {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 	glLoadIdentity();
-
 
 	glTranslatef(0, 0, -zoom);
 	glTranslatef(0, 0, 0);
 	glRotatef(rot.x, 1, 0, 0);
 	glRotatef(rot.y, 0, 1, 0);
 
-
-
-	
-	// apply texture
-	glBindTexture(GL_TEXTURE_2D, md2Texture);
-
-	// render all model instances loaded
-	md2File.Render();
-
-	glTranslatef(0, 0, -zoom);
-	glTranslatef(10, 10, 0);
-	md2File.Render();
+	yoshi.draw();
 
 	glutSwapBuffers();
 }
 
 
-int frameRateCounter = 0;
+
 void onIdle() {
-	
-	// get time since last frame
-	float dt = FrameTime();
-	
-	md2File.Update(dt); // update all instances animation
-		
-	// only output the frame rate every 100 frames...
-	if (++frameRateCounter>500) {
-		std::cout << (1.0f / dt) << " fps\r";
-		frameRateCounter = 0;
-	}
+	yoshi.update(); // update all instances animation
 	glutPostRedisplay();
 }
