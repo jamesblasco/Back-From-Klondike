@@ -126,10 +126,8 @@
     <ClCompile Include="GLUtils.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MD2File.cpp" />
-    <ClCompile Include="old.cpp" />
     <ClCompile Include="SnowMan.cpp" />
     <ClCompile Include="pcxLoader.cpp" />
-    <ClCompile Include="Table2.cpp" />
     <ClCompile Include="Yoshi.cpp" />
   </ItemGroup>
   <ItemGroup>
