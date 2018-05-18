@@ -38,8 +38,7 @@ void onMouse(int button, int state, int x, int y) {
 };
 
 
-void onMotion(int x, int y)
-{
+void onMotion(int x, int y) {
 	Position newer = Position(x, y);
 	Position diff = newer - mouse;
 	mouse = newer;

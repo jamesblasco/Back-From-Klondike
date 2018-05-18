@@ -132,6 +132,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="FrameTimer.h" />
+    <ClInclude Include="List.h" />
     <ClInclude Include="MD2Model.h" />
     <ClInclude Include="GLController.h" />
     <ClInclude Include="GLFigure.h" />

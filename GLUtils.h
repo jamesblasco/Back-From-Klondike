@@ -11,17 +11,15 @@
 enum Axis { X, Y, Z };
 
 class Position {
-private:
-	float x, y, z;
-	
-public:
-	Position(float x = 0, float y = 0, float z = 0);
-	Position operator+(Position c);
-	Position operator-(Position c);
-	Position operator*(Position c);
-	Position operator*(float v);
-	int operator==(Position c);
-	int operator!=(Position c);
+	public:
+		float x, y, z;
+		Position(float x = 0, float y = 0, float z = 0);
+		Position operator+(Position c);
+		Position operator-(Position c);
+		Position operator*(Position c);
+		Position operator*(float v);
+		int operator==(Position c);
+		int operator!=(Position c);
 };
 
 extern GLuint KLtexture;
