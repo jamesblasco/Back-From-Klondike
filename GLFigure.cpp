@@ -51,11 +51,11 @@ void Figure::rotate (Axis axis, float speed, float angle){
 
 void Figure::jump(float distance, float speed) {
 	static float s = 0;
-
 	s += 0.005*speed;
-	pos.z = distance*sin(s);
+	
+	pos.y = distance*sin(s);
 	if (s>3.14) { s = 0; }
-	glTranslatef(0, 0, pos.z);
+	glTranslatef(0, pos.y, 0);
 	
 }
 

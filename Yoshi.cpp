@@ -6,12 +6,11 @@ void Yoshi :: init () {
 	Load("tris.md2");
 	// write memory usage
 	std::cout << "memory usage " << (GetDataSize() / 1024.0f) << "kb\n";
-	texture = MakeTexture("yoshi.pcx");
-	std::cout << texture;
+	//texture = MakeTexture("yoshi.pcx");
 }
 
 void Yoshi::draw() {
-	glBindTexture(GL_TEXTURE_2D, texture);
+	//glBindTexture(GL_TEXTURE_2D, texture);
 	Render();
 }
 

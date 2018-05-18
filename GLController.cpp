@@ -8,7 +8,7 @@
 Position pos = Position();
 Position rot = Position(0, 0.001f);
 Position mouse = Position();
-float zoom = 100.0f;
+float zoom = 200.0f;
 unsigned char Buttons[3] = { 0 };
 
 Snowman snowman;
@@ -92,6 +92,27 @@ void onDisplay() {
 	glTranslatef(0, 0, 0);
 	glRotatef(rot.x, 1, 0, 0);
 	glRotatef(rot.y, 0, 1, 0);
+
+	glPushMatrix();
+	// draw grid
+	glColor3f(0.2f, 0.5f, 0.5f);
+		glBegin(GL_LINES);
+		for (int i = -100; i <= 110; i+= 10) {
+			glVertex3f(i -5 , 0, -105);
+			glVertex3f(i -5, 0, 105);
+
+			glVertex3f(105, 0, i-5);
+			glVertex3f(-105, 0, i-5);
+		}
+		glEnd();
+	glPopMatrix();
+
+
+	//glTranslatef(0, 0, 0);
+	snowman.draw();
+	//glTranslatef(0, 0, 0);
+		
+	
 
 	yoshi.draw();
 

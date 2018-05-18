@@ -128,3 +128,18 @@ unsigned int MakeTexture(const char* filename) {
 }
 
 
+
+
+void glPrint(int x, int y, int z, char *string)
+{
+	//set the position of the text in the window using the x, y and z coordinates
+	glRasterPos3f(x, y, z);
+	//get the length of the string to display
+	int len = (int)strlen(string);
+
+	//loop to display character by character
+	for (int i = 0; i < len; i++)
+	{
+		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, string[i]);
+	}
+};

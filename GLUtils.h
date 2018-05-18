@@ -29,5 +29,8 @@ void OnKeyboardDown(unsigned char key, int x, int y);
 
 GLuint LoadTexture(int width, int height, const char * filename);
 void displaytext(GLuint Thetexture);
+
+
 unsigned int MakeTexture(const char* filename);
+void glPrint(int x, int y, int z, char *string);
 #endif
