@@ -11,8 +11,10 @@
 enum Axis { X, Y, Z };
 
 class Position {
-public:
+private:
 	float x, y, z;
+	
+public:
 	Position(float x = 0, float y = 0, float z = 0);
 	Position operator+(Position c);
 	Position operator-(Position c);
