@@ -1,6 +1,5 @@
 
 #include "GLFigure.h"
-#include "GLUtils.h"
 
 Snowman::Snowman() {};
 

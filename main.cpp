@@ -1,7 +1,7 @@
 
 #include <stdlib.h>
 #include <iostream>
-#include "glut.h"
+#include <GL/glut.h>
 
 #include "GLController.h"
 #include "FrameTimer.h"
@@ -13,12 +13,13 @@ int main(int argc, char* argv[]) {
 	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGBA | GLUT_DEPTH);
 	glutInitWindowSize(640, 480);
 	glutInitWindowPosition(100, 100);
-	glutCreateWindow("Maya Camera");
+	glutCreateWindow("Klondike");
 
 	glutDisplayFunc(onDisplay);
 	glutReshapeFunc(onResize);
 	glutMouseFunc(onMouse);
 	glutMotionFunc(onMotion);
+	glutSpecialFunc(onArrowDown);
 	glutKeyboardFunc(onKeyboardDown);
 	glutIdleFunc(onIdle);
 
