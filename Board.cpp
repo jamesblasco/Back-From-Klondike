@@ -31,15 +31,15 @@ const short steps[SIZE][SIZE] = {
 
 Board::Board(){
 	boxSize = 40;
-	for (int i = 0; i < SIZE; i++) {
-		for (int j = 0; j < SIZE; j++) {
+	for (int column = 0; column < SIZE; column++) {
+		for (int row = 0; row < SIZE; row++) {
 			
 			Type type = Type::NORMAL;
-			switch (steps[i][j]){
+			switch (steps[row][column]){
 				case 0: type = Type::GOAL; break;
 				case -1: type = Type::OUTISDE; break;
 			}
-			boxs[i][j] = Box(this, i,j, steps[i][j], type, Status::NONE);
+			boxs[row][column] = Box(this, column -11, row -11, steps[row][column], type, Status::NONE);
 		}
 	}
 }
@@ -67,7 +67,7 @@ void Board::draw() {
 	glTexCoord2f(1.0, 0.0); glVertex3f(getHalbSize(), 0, -getHalbSize());
 
 	glEnd();
-	glFlush();
+	
 
 
 	glDepthMask(GL_TRUE);
@@ -89,20 +89,20 @@ void Board::draw() {
 	glEnd();
 	*/
 
-
+	 glPushMatrix();
 
 	glTranslatef(-getHalbSize(), 2, -getHalbSize());
 	glTranslatef(getHalbBoxSize(), 2, getHalbBoxSize());
-		for (int i = 0; i < SIZE; i++) {
-			for (int j = 0; j < SIZE; j++) {
-				boxs[i][j].draw();
+	for (int column = 0; column < SIZE; column++) {
+			for (int row = 0; row < SIZE; row++) {
+				boxs[column][row].draw();
 				glTranslatef(getBoxSize(), 0, 0);
 			}
 			glTranslatef(-getSize(), 0, 0);
 			glTranslatef(0, 0, getBoxSize());
 		}
 	
-	glLoadIdentity();
+	glPopMatrix();
 	
 
 	glPopMatrix();

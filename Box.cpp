@@ -1,4 +1,9 @@
 #include "Game.h"
+#include <string>
+#include <sstream>
+#include <string>
+#include <sstream>
+
 
 Box::Box(Board* parent, int i, int j, int steps, Type type, Status status) {
 	this->parent = parent;
@@ -8,7 +13,10 @@ Box::Box(Board* parent, int i, int j, int steps, Type type, Status status) {
 	this->status = status;
 }
 void Box::draw() {
-
+	std::ostringstream oss;
+	oss << steps;
+	std::string var = oss.str().c_str();
+	glPrint(0, 0, 0, (char *)oss.str().c_str());
 	switch (type){
 		case Type::NORMAL:
 			switch (status) {
@@ -32,5 +40,7 @@ void Box::draw() {
 	glTexCoord2f(1.0, 0.0); glVertex3f(parent->getHalbBoxSize(), 0, -parent->getHalbBoxSize());
 
 	glEnd();
+
+	
 	glFlush();
 }

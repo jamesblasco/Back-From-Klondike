@@ -2,30 +2,30 @@
 #define GLUTILS_H
 
 #include <stdlib.h>
+
 #include <GL/glut.h>
 
 #include <fstream>
 #include <iostream>
+#include <math.h>
 
 #define ESC 27
 #define PI 3.14159265
 
 enum Axis { X, Y, Z };
+enum Dimensions { TWO,  THREE };
 
 class Position {
 	public:
 		float x, y, z;
-		Position(float x = 0, float y = 0, float z = NAN);
+		Position(float x = 0, float y = 0, float z = 0);
+		Position(Dimensions dimenisons, float x = 0, float y = 0, float z = 0);
 		Position operator+(Position c);
 		Position operator-(Position c);
 		Position operator*(Position c);
 		Position operator*(float v);
 		int operator==(Position c);
 		int operator!=(Position c);
-		int operator>=(Position c);
-		int operator>(Position c);
-		int operator<=(Position c);
-		int operator<(Position c);
 		static int isInsideArea(Position pos, Position from, Position to);
 };
 
@@ -69,7 +69,7 @@ class Perspective {
 public:
 	float zoom = 400;
 	Position pos = Position(0,0, 0); //
-	Position rot = Position(10, 0.001f);
+	Position rot = Position(10, 0, 0);
 
 	void move(Position variation) {
 		pos.x += (float) 0.5f * ( variation.x * cos(rot.y*PI / 180) - variation.y * sin(rot.y*PI / 180));

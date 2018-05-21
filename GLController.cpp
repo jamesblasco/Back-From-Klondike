@@ -1,4 +1,5 @@
 #include "GLController.h"
+
 #include "Game.h"
 
 
@@ -32,6 +33,14 @@ void onKeyboardDown(unsigned char key, int x, int y) {
 	switch (key) {
 	case 'q':
 	case ESC: exit(1);
+	case '1': game.next(Directions::N); break;
+	case '2': game.next(Directions::NE); break;
+	case '3': game.next(Directions::E); break;
+	case '4': game.next(Directions::SE); break;
+	case '5': game.next(Directions::S); break;
+	case '6': game.next(Directions::SW); break;
+	case '7': game.next(Directions::W); break;
+	case '8': game.next(Directions::NW); break;
 	case 'a':
 		/* do something */;
 		break;
@@ -40,7 +49,9 @@ void onKeyboardDown(unsigned char key, int x, int y) {
 }
 
 void onArrowDown(int key, int x, int y) {
+	std::cout << "key" << key;
 	mouse.arrows = (Arrows)key;
+	glutPostRedisplay();
 }
 
 void onResize(int w, int h) {
@@ -55,10 +66,11 @@ void onResize(int w, int h) {
 
 void onDisplay() {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-	//glBackgroundColor(Color(167, 204, 237));
-	glClearColor(0, 0, 0, 1.0);
+	glBackgroundColor(Color(167, 204, 237));
+	//glClearColor(0, 0, 0, 1.0);
 	
 	glLoadIdentity();
+
 
 	glEnable(GL_BLEND);
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
@@ -71,6 +83,7 @@ void onDisplay() {
 	GLenum err;
 	while ((err = glGetError()) != GL_NO_ERROR) {
 		std::cout << "OpenGL error: " << err;
+		exit(1);
 	}
 
 	glutSwapBuffers();

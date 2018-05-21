@@ -13,35 +13,38 @@ void Game::init() {
 
 void Game::draw() {
 	
-	//for (Figure* figure : decorations) figure->draw(); // first ones -- back
 
-	glPushMatrix();
-	//Box * current = path.getCurrentBox();
-
-	//Position pos = current->getPosition();
-	//glTranslatef(pos.x*board.getBoxSize(), pos.y*board.getBoxSize(), 0);
+	Box * current = path.getCurrentBox();
+	Position pos = current->getPosition();
 	
 	yoshi.draw();
+	glPushMatrix();
+		glTranslatef(-pos.x*board.getBoxSize(), 0, -pos.y*board.getBoxSize());
+		for (Figure* figure : decorations) figure->draw(); // first ones -- back
+		board.draw();
 	glPopMatrix();
-	board.draw();
+	
+	
 
 }
-/* Box * Game::next(Directions direction, int steps) {
+ Box * Game::next(Directions direction) {
 	
 	Box * current = path.getCurrentBox();
 	
+	int steps = current->getSteps();
 	Position pos = current->getPosition();
+	std::cout << "pos x:" << pos.x << " y:" << pos.y << "\n";
 	Position newPos;
 	
 	switch (direction) {
-		case Directions::N: newPos = Position(pos.x, pos.y + steps); break;
-		case Directions::NE: newPos = Position(pos.x + steps, pos.y + steps); break;
+		case Directions::N: newPos = Position(pos.x, pos.y - steps); break;
+		case Directions::NE: newPos = Position(pos.x + steps, pos.y - steps); break;
 		case Directions::E: newPos = Position(pos.x + steps, pos.y); break;
-		case Directions::SE: newPos = Position(pos.x + steps, pos.y - steps); break;
-		case Directions::S: newPos = Position(pos.x, pos.y - steps); break;
-		case Directions::SW: newPos = Position(pos.x - steps, pos.y - steps); break;
+		case Directions::SE: newPos = Position(pos.x + steps, pos.y + steps); break;
+		case Directions::S: newPos = Position(pos.x, pos.y + steps); break;
+		case Directions::SW: newPos = Position(pos.x - steps, pos.y + steps); break;
 		case Directions::W: newPos = Position(pos.x - steps, pos.y); break;
-		case Directions::NW: newPos = Position(pos.x - steps, pos.y + steps); break;
+		case Directions::NW: newPos = Position(pos.x - steps, pos.y - steps); break;
 		default: return NULL;
 	}
 
@@ -49,14 +52,17 @@ void Game::draw() {
 	Position to = Position(11, 11);
 
 	if (Position::isInsideArea(newPos, from, to)) {
+		std::cout << "new x:" << newPos.x << " y:" << newPos.y << "\n";
 		Box * newBox = board.getBox(newPos.x, newPos.y);
+
+		if (newBox->getType() == Type::OUTISDE) return NULL;
 		current->setStatus(Status::PAST);
 		newBox->setStatus(Status::ACTIVE);
 		path.addBox(newBox);
 		return newBox;
 	}
 	return NULL;
-}*/
+}
 
 void Game::update() {yoshi.update(); }
 

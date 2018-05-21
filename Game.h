@@ -31,6 +31,8 @@ public:
 	void setPosition(Position pos) { this->pos = pos; };
 	Status getStatus() { return status; };
 	void setStatus(Status status) { this->status = status; };
+	int getSteps() { return steps; };
+	Type getType() { return type; };
 };
 
 class Board : public Figure, Texture {
@@ -46,8 +48,8 @@ public:
 	float getBoxSize() { return (float)boxSize; };
 	float getHalbSize() { return boxSize * SIZE / 2; };
 	float getHalbBoxSize() { return (float)boxSize / 2; };
-	Box * getBox(int row, int column) { return &boxs[row][column]; };
-	Box * getStartBox() { return getBox(11, 11); };
+	Box * getBox(int x, int y) { return &boxs[y+11][x+11]; };
+	Box * getStartBox() { return getBox(0, 0); };
 };
 
 
@@ -96,6 +98,6 @@ class Game {
 		void init(); //loads figure texture
 		void draw();
 		void update();
-		//Box * next(Directions direction, int steps);
+		Box * next(Directions direction);
 };
 #endif

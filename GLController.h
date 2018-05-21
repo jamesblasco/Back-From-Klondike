@@ -2,7 +2,7 @@
 #define GLCONTROLLER_H
 
 #include <iostream>
-#include <GL\glut.h>
+#include <GL/glut.h>
 #include "GLUtils.h"
 
 void onArrowDown(int key, int x, int y);
