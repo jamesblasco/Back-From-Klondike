@@ -7,13 +7,13 @@
 using namespace std;
 
 Figure::Figure() {
-	this->pos = Position();
-	this->rot= Position();
+	this->pos = Position(0,0,0);
+	this->rot= Position(0, 0, 0);
 }
 
 Figure::Figure(float x, float y, float z) {
 	this->pos = Position(x, y, z);
-	this->rot = Position();
+	this->rot = Position(0, 0, 0);
 }
 
 void calculateRotation(float * axis, float speed, float val) {

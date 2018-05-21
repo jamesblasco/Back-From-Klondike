@@ -8,7 +8,7 @@
 #include <string.h>
 #include <assert.h>
 #include <stdlib.h>
-#include "glut.h"
+#include <GL/glut.h>
 #include "MD2File.h"
 
 

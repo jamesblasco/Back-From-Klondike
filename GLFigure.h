@@ -2,6 +2,7 @@
 #define FIGURE_H
 
 #include "GLUtils.h"
+#include <list>
 
 class Figure {
 protected:
@@ -20,6 +21,15 @@ public:
 	void rotate(Axis axis, float speed, float angle=-1);
 	
 	virtual void draw() = 0;
+	void init() {}
+};
+
+class Texture {
+	protected:
+		GLuint texture;
+	public:
+		void setTexture();
+		void drawTexture();
 };
 
 class Snowman : public Figure {
@@ -28,6 +38,20 @@ class Snowman : public Figure {
 		float snowman_rot = 0;
 		void draw();
 };
+
+
+
+class GroupFigure {
+protected:
+	std::list<Figure*> figures;
+
+public:
+	GroupFigure()	{
+		std::cout << "test";
+	}
+};
+
+
 
 #endif
 
