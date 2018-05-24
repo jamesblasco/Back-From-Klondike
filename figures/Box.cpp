@@ -1,4 +1,5 @@
-#include "Game.h"
+#include "Box.h"
+#include "Board.h"
 #include <string>
 #include <sstream>
 #include <string>
@@ -13,10 +14,10 @@ Box::Box(Board* parent, int i, int j, int steps, Type type, Status status) {
 	this->status = status;
 }
 void Box::draw() {
-	std::ostringstream oss;
+	/*std::ostringstream oss;
 	oss << steps;
 	std::string var = oss.str().c_str();
-	glPrint(0, 0, 0, (char *)oss.str().c_str());
+	glPrint(0, 0, 0, (char *)oss.str().c_str());*/
 	switch (type){
 		case Type::NORMAL:
 			switch (status) {

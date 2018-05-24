@@ -1,40 +1,11 @@
-#include "GLUtils.h"
-#include "pcxLoader.h"
+#include "Texture.h"
+#include "glcore.h"
+#include <stdlib.h>
+#include <fstream>
+#include <iostream>
+#include <math.h>
+#include "../textures/pcxLoader.h"
 #include <SOIL/SOIL.h>
-
-Position::Position(float x, float y, float z) {
-	this->x = x;
-	this->y = y;
-	this->z = z;
-};
-Position::Position(Dimensions dimensions, float x, float y, float z) {
-	this->x = x;
-	this->y = y;
-	this->z = dimensions == Dimensions::TWO ? NAN : z;
-};
-
-
-Position Position::operator+(Position c) { 	return Position(c.x + x, c.y+y, c.z+z); }
-Position Position::operator-(Position c) {	return Position(x- c.x, y - c.y, z - c.z); }
-Position Position::operator*(Position c) { return Position(c.x * x, c.y * y, c.z * z); }
-Position Position::operator*(float v) { return Position(x*v, y*v, z*v); }
-
-int Position::operator==(Position c) {	return c.x == x && c.y == y && c.z == z; }
-int Position::operator!=(Position c) {	return c.x != x || c.y != y || (c.z != NAN ? c.z != z : false);}
-
-int Position::isInsideArea(Position pos, Position from, Position to) {
-	return pos.x >= from.x && pos.x <= to.x && pos.y >= from.y && pos.y <= to.y;
-}
-
-Color :: Color(int r, int g, int b, float a){
-	this->r = r;
-	this->g = g;
-	this->b = b;
-	this->a = a<1 ? a : 1;
-}
-
-void glColor(Color color) {	glColor4f(((float)color.r)/255, ((float)color.g) / 255, ((float)color.b) / 255, color.a);}
-void glBackgroundColor(Color color) { glClearColor(((float)color.r) / 255, ((float)color.g) / 255, ((float)color.b) / 255, color.a); }
 
 
 GLuint loadTexture(int width, int height, unsigned char * pixels) {
@@ -58,20 +29,20 @@ GLuint loadTexture(int width, int height, unsigned char * pixels) {
 
 
 /// A function to load a bitmap file and return the texture object for that texture
-GLuint loadImageTexture(const char * filename, int width, int height) {
-	
+GLuint loaderImageTexture(const char * filename, int width, int height) {
+
 	unsigned char * pixels;
 
 	FILE * file;
 	file = fopen(filename, "rb");
 	if (file == NULL) return 0;
 
-	pixels = (unsigned char *) malloc(width * height * 3);
+	pixels = (unsigned char *)malloc(width * height * 3);
 	//int size = fseek(file,);
 	fread(pixels, width * height * 3, 1, file);
 	fclose(file);
 
-	for (int i = 0; i < width * height; ++i){
+	for (int i = 0; i < width * height; ++i) {
 		int index = i * 3;
 		unsigned char B, R;
 		B = pixels[index];
@@ -87,7 +58,7 @@ GLuint loadImageTexture(const char * filename, int width, int height) {
 	return texture;
 }
 
-GLuint loadPcxTexture(const char* filename) {
+GLuint loaderPcxTexture(const char* filename) {
 
 	unsigned int w, h, bpp;
 	unsigned char* pixels;
@@ -96,28 +67,28 @@ GLuint loadPcxTexture(const char* filename) {
 
 	GLenum infmt, outfmt;
 	switch (bpp) {
-		case 3:
-			infmt = GL_RGB;
-			outfmt = GL_RGB;
-			break;
-		case 4:
-			infmt = GL_RGBA;
-			outfmt = GL_RGBA;
-			break;
-		case 1:
-			infmt = outfmt = GL_ALPHA;
-			break;
-		case 2:
-			infmt = outfmt = GL_RGB5_A1;
-			break;
-		default:
-			free(pixels);
-			return 0;
+	case 3:
+		infmt = GL_RGB;
+		outfmt = GL_RGB;
+		break;
+	case 4:
+		infmt = GL_RGBA;
+		outfmt = GL_RGBA;
+		break;
+	case 1:
+		infmt = outfmt = GL_ALPHA;
+		break;
+	case 2:
+		infmt = outfmt = GL_RGB5_A1;
+		break;
+	default:
+		free(pixels);
+		return 0;
 	}
 
 	return loadTexture(w, h, pixels);
 
-}GLuint loadSOILTexture(const char* filename, int width, int height) {
+}GLuint loaderSOILTexture(const char* filename) {
 
 	//unsigned char * pixels = SOIL_load_image("test.png", &width, &height, 0, SOIL_LOAD_AUTO);
 	//return loadTexture(width, height, pixels);
@@ -125,9 +96,17 @@ GLuint loadPcxTexture(const char* filename) {
 }
 
 
+void Texture::loadImageTexture(const char * filename, int width, int height) {
+	texture = loaderImageTexture(filename, width, height);
+}
 
+void Texture::loadPcxTexture(const char* filename) {
+	texture = loaderPcxTexture(filename);
+}
 
-
+void Texture::loadSOILTexture(const char* filename) {
+	texture = loaderSOILTexture(filename);
+}
 
 
 void glPrint(int x, int y, int z, char *string)

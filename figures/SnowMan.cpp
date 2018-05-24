@@ -1,5 +1,6 @@
 
-#include "GLFigure.h"
+#include "Snowman.h"
+
 
 Snowman::Snowman() {};
 

@@ -1,5 +1,5 @@
-#include "Game.h"
-#include <SOIL/SOIL.h>
+
+#include "Board.h"
 
 
 const short steps[SIZE][SIZE] = {
@@ -45,9 +45,7 @@ Board::Board(){
 }
 
 
-void Board::init() {
-	texture = loadSOILTexture("board0.png", getSize(), getSize());
-}
+void Board::init() { loadSOILTexture("board0.png"); }
 
 void Board::draw() {
 

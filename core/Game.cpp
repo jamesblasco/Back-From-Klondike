@@ -1,9 +1,13 @@
+
 #include "Game.h"
+#include "../figures/Clouds.h"
 
 
-Game::Game():
-	path(board.getStartBox()),
-	decorations({ new Clouds() }) {};
+Board Game::board;
+Yoshi Game::yoshi; 
+std::list<Figure *> Game::decorations = { new Clouds() };
+Path Game::path = board.getStartBox();
+
 
 void Game::init() {
 	//for (Figure* figure : decorations) figure->init();
@@ -23,8 +27,6 @@ void Game::draw() {
 		for (Figure* figure : decorations) figure->draw(); // first ones -- back
 		board.draw();
 	glPopMatrix();
-	
-	
 
 }
  Box * Game::next(Directions direction) {

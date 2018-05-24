@@ -1,11 +1,12 @@
-#include "Game.h"
-#include "FrameTimer.h"
+
+#include "Yoshi.h"
+#include "../FrameTimer.h"
 
 void Yoshi :: init () {
 	Load("tris.md2");
 	// write memory usage
 	std::cout << "memory usage " << (GetDataSize() / 1024.0f) << "kb\n";
-	texture = loadPcxTexture("yoshi.pcx");
+	loadPcxTexture("yoshi.pcx");
 }
 
 void Yoshi::draw() {

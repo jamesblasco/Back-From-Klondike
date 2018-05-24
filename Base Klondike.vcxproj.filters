@@ -13,98 +13,179 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Archivos de origen\figures">
-      <UniqueIdentifier>{d0ffcaad-41f1-4398-9917-75214e3d8c8f}</UniqueIdentifier>
+    <Filter Include="Archivos de encabezado\utils">
+      <UniqueIdentifier>{29ddc90f-bf14-411c-932b-6c51389fbb82}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\core">
+      <UniqueIdentifier>{630c4db5-a96b-4cad-93dc-173b0fe15181}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\figures">
+      <UniqueIdentifier>{4f05af27-165d-4b8c-8319-c11735631ce6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\core">
+      <UniqueIdentifier>{0b72aca8-0642-4caa-8116-f6c5734bbc51}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\figure">
+      <UniqueIdentifier>{61881d5a-d11a-4570-bd02-9ac396b5a950}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\utils">
+      <UniqueIdentifier>{fcead59d-0344-430f-8438-8a7e209e430c}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="GLUtils.cpp">
-      <Filter>Archivos de origen</Filter>
+    <ClCompile Include="figures\Board.cpp">
+      <Filter>Archivos de origen\figure</Filter>
     </ClCompile>
-    <ClCompile Include="GLController.cpp">
-      <Filter>Archivos de origen</Filter>
+    <ClCompile Include="figures\Box.cpp">
+      <Filter>Archivos de origen\figure</Filter>
     </ClCompile>
-    <ClCompile Include="GLFigure.cpp">
-      <Filter>Archivos de origen</Filter>
+    <ClCompile Include="figures\Button.cpp">
+      <Filter>Archivos de origen\figure</Filter>
     </ClCompile>
-    <ClCompile Include="pcxLoader.cpp">
+    <ClCompile Include="figures\Cloud.cpp">
+      <Filter>Archivos de origen\figure</Filter>
+    </ClCompile>
+    <ClCompile Include="figures\Clouds.cpp">
+      <Filter>Archivos de origen\figure</Filter>
+    </ClCompile>
+    <ClCompile Include="figures\SnowMan.cpp">
+      <Filter>Archivos de origen\figure</Filter>
+    </ClCompile>
+    <ClCompile Include="figures\Yoshi.cpp">
+      <Filter>Archivos de origen\figure</Filter>
+    </ClCompile>
+    <ClCompile Include="utils\Color.cpp">
+      <Filter>Archivos de origen\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="utils\Position.cpp">
+      <Filter>Archivos de origen\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="utils\Position2D.cpp">
+      <Filter>Archivos de origen\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="core\Window.cpp">
+      <Filter>Archivos de origen\core</Filter>
+    </ClCompile>
+    <ClCompile Include="core\Game.cpp">
+      <Filter>Archivos de origen\core</Filter>
+    </ClCompile>
+    <ClCompile Include="core\GLFigure.cpp">
+      <Filter>Archivos de origen\core</Filter>
+    </ClCompile>
+    <ClCompile Include="core\KeyboardController.cpp">
+      <Filter>Archivos de origen\core</Filter>
+    </ClCompile>
+    <ClCompile Include="core\Lines.cpp">
+      <Filter>Archivos de origen\core</Filter>
+    </ClCompile>
+    <ClCompile Include="core\MouseController.cpp">
+      <Filter>Archivos de origen\core</Filter>
+    </ClCompile>
+    <ClCompile Include="core\Perspective.cpp">
+      <Filter>Archivos de origen\core</Filter>
+    </ClCompile>
+    <ClCompile Include="core\Texture.cpp">
+      <Filter>Archivos de origen\core</Filter>
+    </ClCompile>
+    <ClCompile Include="FrameTimer.cpp">
       <Filter>Archivos de recursos</Filter>
     </ClCompile>
     <ClCompile Include="MD2File.cpp">
       <Filter>Archivos de recursos</Filter>
     </ClCompile>
-    <ClCompile Include="FrameTimer.cpp">
-      <Filter>Archivos de recursos</Filter>
-    </ClCompile>
     <ClCompile Include="MD2Model.cpp">
       <Filter>Archivos de recursos</Filter>
     </ClCompile>
-    <ClCompile Include="Clouds.cpp">
-      <Filter>Archivos de origen\figures</Filter>
-    </ClCompile>
-    <ClCompile Include="Yoshi.cpp">
-      <Filter>Archivos de origen\figures</Filter>
-    </ClCompile>
-    <ClCompile Include="Board.cpp">
-      <Filter>Archivos de origen\figures</Filter>
-    </ClCompile>
-    <ClCompile Include="Box.cpp">
-      <Filter>Archivos de origen\figures</Filter>
-    </ClCompile>
-    <ClCompile Include="SnowMan.cpp">
-      <Filter>Archivos de origen\figures</Filter>
-    </ClCompile>
-    <ClCompile Include="Game.cpp">
-      <Filter>Archivos de origen</Filter>
+    <ClCompile Include="textures\pcxLoader.cpp">
+      <Filter>Archivos de recursos</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="GLUtils.h">
-      <Filter>Archivos de encabezado</Filter>
+    <ClInclude Include="figures\Board.h">
+      <Filter>Archivos de encabezado\figures</Filter>
     </ClInclude>
-    <ClInclude Include="GLFigure.h">
-      <Filter>Archivos de encabezado</Filter>
+    <ClInclude Include="figures\Box.h">
+      <Filter>Archivos de encabezado\figures</Filter>
     </ClInclude>
-    <ClInclude Include="glut.h">
-      <Filter>Archivos de recursos</Filter>
+    <ClInclude Include="figures\Button.h">
+      <Filter>Archivos de encabezado\figures</Filter>
     </ClInclude>
-    <ClInclude Include="GLController.h">
-      <Filter>Archivos de encabezado</Filter>
+    <ClInclude Include="figures\Cloud.h">
+      <Filter>Archivos de encabezado\figures</Filter>
     </ClInclude>
-    <ClInclude Include="pcxLoader.h">
-      <Filter>Archivos de recursos</Filter>
+    <ClInclude Include="figures\Clouds.h">
+      <Filter>Archivos de encabezado\figures</Filter>
     </ClInclude>
-    <ClInclude Include="MD2Model.h">
+    <ClInclude Include="figures\Snowman.h">
+      <Filter>Archivos de encabezado\figures</Filter>
+    </ClInclude>
+    <ClInclude Include="figures\Yoshi.h">
+      <Filter>Archivos de encabezado\figures</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\Color.h">
+      <Filter>Archivos de encabezado\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\Position.h">
+      <Filter>Archivos de encabezado\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\Position2D.h">
+      <Filter>Archivos de encabezado\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\Utils.h">
+      <Filter>Archivos de encabezado\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="core\Game.h">
+      <Filter>Archivos de encabezado\core</Filter>
+    </ClInclude>
+    <ClInclude Include="core\GLCore.h">
+      <Filter>Archivos de encabezado\core</Filter>
+    </ClInclude>
+    <ClInclude Include="core\GLFigure.h">
+      <Filter>Archivos de encabezado\core</Filter>
+    </ClInclude>
+    <ClInclude Include="core\KeyboardController.h">
+      <Filter>Archivos de encabezado\core</Filter>
+    </ClInclude>
+    <ClInclude Include="core\Lines.h">
+      <Filter>Archivos de encabezado\core</Filter>
+    </ClInclude>
+    <ClInclude Include="core\MouseController.h">
+      <Filter>Archivos de encabezado\core</Filter>
+    </ClInclude>
+    <ClInclude Include="core\Path.h">
+      <Filter>Archivos de encabezado\core</Filter>
+    </ClInclude>
+    <ClInclude Include="core\Perspective.h">
+      <Filter>Archivos de encabezado\core</Filter>
+    </ClInclude>
+    <ClInclude Include="core\Window.h">
+      <Filter>Archivos de encabezado\core</Filter>
+    </ClInclude>
+    <ClInclude Include="core\Texture.h">
+      <Filter>Archivos de encabezado\core</Filter>
+    </ClInclude>
+    <ClInclude Include="FrameTimer.h">
       <Filter>Archivos de recursos</Filter>
     </ClInclude>
     <ClInclude Include="MD2File.h">
       <Filter>Archivos de recursos</Filter>
     </ClInclude>
-    <ClInclude Include="FrameTimer.h">
+    <ClInclude Include="MD2Model.h">
       <Filter>Archivos de recursos</Filter>
     </ClInclude>
-    <ClInclude Include="List.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\AppData\Local\Temp\Rar$DRa4908.8515\include\zconf.h">
+    <ClInclude Include="textures\pcxLoader.h">
       <Filter>Archivos de recursos</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\AppData\Local\Temp\Rar$DRa4908.8515\include\zlib.h">
-      <Filter>Archivos de recursos</Filter>
-    </ClInclude>
-    <ClInclude Include="SOIL.h">
-      <Filter>Archivos de recursos</Filter>
-    </ClInclude>
-    <ClInclude Include="Game.h">
-      <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="klondike.bmp">
+    <None Include="tris.md2">
       <Filter>Archivos de recursos</Filter>
-    </Image>
+    </None>
+    <None Include="yoshi.pcx">
+      <Filter>Archivos de recursos</Filter>
+    </None>
   </ItemGroup>
 </Project>

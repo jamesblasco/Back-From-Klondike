@@ -1,5 +1,5 @@
+
 #include "GLFigure.h"
-#include "GLUtils.h"
 #include <string.h>
 #include <iostream>
 
@@ -57,5 +57,13 @@ void Figure::jump(float distance, float speed) {
 	if (s>3.14) { s = 0; }
 	glTranslatef(0, pos.y, 0);
 	
+}
+
+
+void Figure::render() {
+	glPushMatrix();
+	glTranslatef(pos.x, pos.y, pos.z);
+	draw();
+	glPopMatrix();
 }
 
