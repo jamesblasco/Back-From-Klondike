@@ -1,11 +1,13 @@
 
 #include "Game.h"
+#include "../figures/Algorithm.h"
 #include "../figures/Clouds.h"
 
 
 Board Game::board;
 Yoshi Game::yoshi; 
 std::list<Figure *> Game::decorations = { new Clouds() };
+std::list<Box *> Game::solution = {  };
 Path Game::path = board.getStartBox();
 
 
@@ -13,6 +15,7 @@ void Game::init() {
 	//for (Figure* figure : decorations) figure->init();
 	yoshi.init();
 	board.init();
+	solver();
 }
 
 void Game::draw() {
@@ -57,7 +60,7 @@ void Game::draw() {
 		std::cout << "new x:" << newPos.x << " y:" << newPos.y << "\n";
 		Box * newBox = board.getBox(newPos.x, newPos.y);
 
-		if (newBox->getType() == Type::OUTISDE) return NULL;
+		if (newBox->getType() == Type::OUTSIDE) return NULL;
 		current->setStatus(Status::PAST);
 		newBox->setStatus(Status::ACTIVE);
 		path.addBox(newBox);
@@ -68,3 +71,40 @@ void Game::draw() {
 
 void Game::update() {yoshi.update(); }
 
+void Game::buildSolution(Box* goal){
+	Box * node = goal;
+	int i = 0;
+	while (node->getPosition()!=Position(0,0)) {
+		solution.push_front(node);
+		i++;
+		node = node->getParent();
+	}
+	std::cout << "Tamaño de solucion final" << i;
+}
+
+void Game::solver() {
+	std::list<Box*> open;
+	std::list<Box*> aux;
+
+	open.push_back(board.getStartBox());
+	int i = 0;
+	while (open.size() > 0) {
+		for (Box* node : open) {
+			std::cout << node->getSteps() << "\n";
+			for (Directions dir : { N, NE, E, SE, S, SW, W, NW }) {
+				Box* child = board.getChildBox(node, dir);
+				if (child != NULL) {
+					child->setParent(node);
+					if (child->getType() == Type::GOAL) return buildSolution(child);
+					aux.push_back(child);
+				}
+			}
+		}
+		i++;
+		std::cout<< "\nNivel " << i << "\n";
+		open = aux;
+		aux.clear();
+	}
+	
+	std::cout << "no hay solucion:" << open.size();
+}

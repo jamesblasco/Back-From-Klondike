@@ -1,18 +1,27 @@
 #include "Box.h"
 #include "Board.h"
+#include "../core/Game.h"
 #include <string>
 #include <sstream>
 #include <string>
 #include <sstream>
 
 
-Box::Box(Board* parent, int i, int j, int steps, Type type, Status status) {
-	this->parent = parent;
+
+
+Box::Box(Board* board, int i, int j, int steps, Type type, Status status) {
+	this->board = board;
 	this->pos = Position(i, j);
 	this->steps = steps;
 	this->type = type;
 	this->status = status;
+	this->state = State::UNCHECKED;
+	this->parent = NULL;
 }
+
+void Box::setParent(Box * p){	parent = p;}
+Box * Box::getParent() { return parent; }
+
 void Box::draw() {
 	/*std::ostringstream oss;
 	oss << steps;
@@ -29,19 +38,20 @@ void Box::draw() {
 		case Type::GOAL:
 			glColor(Color(0, 255, 0, 1));
 			break;
-		case Type::OUTISDE:
+		case Type::OUTSIDE:
 		default:
 			return;
 	}
 	
 	glBegin(GL_QUADS);
-	glTexCoord2f(0.0, 0.0); glVertex3f(-parent->getHalbBoxSize(), 0, -parent->getHalbBoxSize());
-	glTexCoord2f(0.0, 1.0); glVertex3f(-parent->getHalbBoxSize(), 0, parent->getHalbBoxSize());
-	glTexCoord2f(1.0, 1.0); glVertex3f(parent->getHalbBoxSize(), 0, parent->getHalbBoxSize());
-	glTexCoord2f(1.0, 0.0); glVertex3f(parent->getHalbBoxSize(), 0, -parent->getHalbBoxSize());
+	glTexCoord2f(0.0, 0.0); glVertex3f(-board->getHalbBoxSize(), 0, -board->getHalbBoxSize());
+	glTexCoord2f(0.0, 1.0); glVertex3f(-board->getHalbBoxSize(), 0, board->getHalbBoxSize());
+	glTexCoord2f(1.0, 1.0); glVertex3f(board->getHalbBoxSize(), 0, board->getHalbBoxSize());
+	glTexCoord2f(1.0, 0.0); glVertex3f(board->getHalbBoxSize(), 0, -board->getHalbBoxSize());
 
 	glEnd();
 
 	
 	glFlush();
 }
+

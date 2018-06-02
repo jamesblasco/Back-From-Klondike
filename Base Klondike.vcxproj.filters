@@ -102,6 +102,9 @@
     <ClCompile Include="textures\pcxLoader.cpp">
       <Filter>Archivos de recursos</Filter>
     </ClCompile>
+    <ClCompile Include="figures\Algorithm.cpp">
+      <Filter>Archivos de origen\figure</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="figures\Board.h">
@@ -178,6 +181,12 @@
     </ClInclude>
     <ClInclude Include="textures\pcxLoader.h">
       <Filter>Archivos de recursos</Filter>
+    </ClInclude>
+    <ClInclude Include="Header.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="figures\Algorithm.h">
+      <Filter>Archivos de encabezado\figures</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

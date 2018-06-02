@@ -20,7 +20,9 @@ public:
 	float getHalbSize() { return boxSize * SIZE / 2; };
 	float getHalbBoxSize() { return (float)boxSize / 2; };
 	Box * getBox(int x, int y) { return &boxs[y + 11][x + 11]; };
+	Box * getChildBox(Box *, Directions);
 	Box * getStartBox() { return getBox(0, 0); };
+
 };
 
 
