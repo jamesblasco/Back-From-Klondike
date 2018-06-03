@@ -13,12 +13,13 @@ void Yoshi::draw() {
 	
 	glPushMatrix();
 
-	//	jump(20, 1);
+		jump(7, 2);
 
 		rotate(Y, 1, -45);
-		rotate(Y, 0.01);
+		rotate(Y, 2);
 
-		glTranslatef(0, 25, 0);
+
+		glTranslatef(0, 23, 0);
 
 		glEnable(GL_TEXTURE_2D);
 		glColor3f(1.0f, 1.0f, 1.0f);

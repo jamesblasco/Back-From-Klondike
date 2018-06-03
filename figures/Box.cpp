@@ -24,8 +24,16 @@ void Box::draw() {
 	switch (type){
 		case Type::NORMAL:
 			switch (status) {
-				case Status::ACTIVE:  glColor(Color(170, 255, 170, 0.5)); break;
-				case Status::PAST:   glColor(Color(150, 150, 150, 0.5)); break;
+				case Status::ACTIVE: glColor(Color(29, 179, 29, 0.8)); break;
+				case Status::PAST: { 
+					glColor(Color(150, 150, 150, 0.5)); 
+					glPushMatrix();
+					glColor3f(0.0f, 1.0f, 0.0f);
+					glTranslatef(0, 5, 0);
+					board->jump(5, 3);
+					glutSolidSphere(10, 20, 20);
+					glPopMatrix();
+				}
 				case Status::NONE: default:	return;
 			}
 			break;

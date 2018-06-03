@@ -10,6 +10,7 @@ class Figure {
 protected:
 	Position pos;
 	Position rot;
+	float jumpPos;
 
 public:
 	Figure();
