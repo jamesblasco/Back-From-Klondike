@@ -12,6 +12,7 @@ public:
 	Path(Box * box) : path({ box }) {};
 	Box * getCurrentBox() { return path.back(); }
 	void addBox(Box * box) { path.push_back(box); }
+	void clear();
 };
 
 #endif

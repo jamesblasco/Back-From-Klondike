@@ -31,15 +31,18 @@ const short steps[SIZE][SIZE] = {
 
 Board::Board(){
 	boxSize = 40;
+	reset();
+}
+
+void Board::reset() {
 	for (int column = 0; column < SIZE; column++) {
 		for (int row = 0; row < SIZE; row++) {
-			
 			Type type = Type::NORMAL;
-			switch (steps[row][column]){
-				case 0: type = Type::GOAL; break;
-				case -1: type = Type::OUTSIDE; break;
+			switch (steps[row][column]) {
+			case 0: type = Type::GOAL; break;
+			case -1: type = Type::OUTSIDE; break;
 			}
-			boxs[row][column] = Box(this, column -11, row -11, steps[row][column], type, Status::NONE);
+			boxs[row][column] = Box(this, column - 11, row - 11, steps[row][column], type, Status::NONE);
 		}
 	}
 }
@@ -108,48 +111,3 @@ void Board::draw() {
 }
 
 
-
-Box * Board::getChildBox(Box * box, Directions direction) {
-	int steps = box->getSteps();
-
-	Position pos = box->getPosition();
-	Position newPos;
-
-	for (int i = 1; i <= steps; i++) {
-
-		switch (direction) {
-		case N: newPos = Position(pos.x, pos.y - i); break;
-		case NE: newPos = Position(pos.x + i, pos.y - i); break;
-		case E: newPos = Position(pos.x + i, pos.y); break;
-		case SE: newPos = Position(pos.x + i, pos.y + i); break;
-		case S: newPos = Position(pos.x, pos.y + i); break;
-		case SW: newPos = Position(pos.x - i, pos.y + i); break;
-		case W: newPos = Position(pos.x - i, pos.y); break;
-		case NW: newPos = Position(pos.x - i, pos.y - i); break;
-		default: return NULL;
-		}
-
-		Position from = Position(-11, -11);
-		Position to = Position(11, 11);
-		
-		if (Position::isInsideArea(newPos, from, to)) {
-			Box * newBox = this->getBox(newPos.x, newPos.y);
-		
-			if (newBox->getType() == Type::OUTSIDE) return NULL;
-			if (newBox->getType() == Type::GOAL && i != steps) return NULL;
-
-			if (i == steps) {
-				if (newBox->getState() == State::CHECKED) {
-					std::cout << "CHECKED \n ";
-					return NULL;
-				}
-				else {
-					std::cout << "UNCHECKED \n ";
-					newBox->setState(State::CHECKED);
-				}
-				return newBox;
-			}
-		}
-	}
-	return NULL;
-}

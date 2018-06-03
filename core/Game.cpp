@@ -1,29 +1,55 @@
 
 #include "Game.h"
+#include "Perspective.h"
 #include "../figures/Algorithm.h"
 #include "../figures/Clouds.h"
+#include <sstream>
+#include <string>
+#include <sstream>
+#include <string>
 
 
 Board Game::board;
 Yoshi Game::yoshi; 
-std::list<Figure *> Game::decorations = { new Clouds() };
-std::list<Box *> Game::solution = {  };
+GameMode Game::mode = GameMode::USER;
 Path Game::path = board.getStartBox();
+std::list<Box *> Game::solution = {};
+std::list<Figure *> Game::decorations = { new Clouds() };
 
 
 void Game::init() {
 	//for (Figure* figure : decorations) figure->init();
 	yoshi.init();
 	board.init();
-	solver();
 }
 
 void Game::draw() {
-	
 
 	Box * current = path.getCurrentBox();
 	Position pos = current->getPosition();
 	
+	
+
+	glPushMatrix();
+	glTranslatef(-200, 150, -400);
+	
+	glColor(Color(255, 255, 255, 0.5));
+	
+	glBegin(GL_QUADS);
+		glTexCoord2f(0.0, 0.0); glVertex3f(-10, -10, 0);
+		glTexCoord2f(0.0, 1.0); glVertex3f(-10, 10, 0);
+		glTexCoord2f(1.0, 1.0); glVertex3f(120, 10, 0);
+		glTexCoord2f(1.0, 0.0); glVertex3f(120, -10, 0);
+	glEnd();
+
+	glTranslatef(10, -12, 20);
+	glColor(Color(25, 76, 25));
+	glPrint(0, 0, 0, (char *)(mode == GameMode::USER ? "USER MODE" : "SOLUTION MODE"));
+
+	glPopMatrix();
+
+	Perspective::draw();
+
 	yoshi.draw();
 	glPushMatrix();
 		glTranslatef(-pos.x*board.getBoxSize(), 0, -pos.y*board.getBoxSize());
@@ -32,43 +58,39 @@ void Game::draw() {
 	glPopMatrix();
 
 }
+
  Box * Game::next(Directions direction) {
-	
 	Box * current = path.getCurrentBox();
-	
-	int steps = current->getSteps();
-	Position pos = current->getPosition();
-	std::cout << "pos x:" << pos.x << " y:" << pos.y << "\n";
-	Position newPos;
-	
-	switch (direction) {
-		case Directions::N: newPos = Position(pos.x, pos.y - steps); break;
-		case Directions::NE: newPos = Position(pos.x + steps, pos.y - steps); break;
-		case Directions::E: newPos = Position(pos.x + steps, pos.y); break;
-		case Directions::SE: newPos = Position(pos.x + steps, pos.y + steps); break;
-		case Directions::S: newPos = Position(pos.x, pos.y + steps); break;
-		case Directions::SW: newPos = Position(pos.x - steps, pos.y + steps); break;
-		case Directions::W: newPos = Position(pos.x - steps, pos.y); break;
-		case Directions::NW: newPos = Position(pos.x - steps, pos.y - steps); break;
-		default: return NULL;
-	}
+	Box * newBox  = current->getChildBox(direction);
 
-	Position from = Position(-11, -11);
-	Position to = Position(11, 11);
-
-	if (Position::isInsideArea(newPos, from, to)) {
-		std::cout << "new x:" << newPos.x << " y:" << newPos.y << "\n";
-		Box * newBox = board.getBox(newPos.x, newPos.y);
-
-		if (newBox->getType() == Type::OUTSIDE) return NULL;
+	if(newBox) {
 		current->setStatus(Status::PAST);
 		newBox->setStatus(Status::ACTIVE);
 		path.addBox(newBox);
 		return newBox;
-	}
-	return NULL;
+	} else return NULL;
 }
 
+ Box * Game::nextStepInSolution(){
+
+	 std::cout << solution.size();
+	 if (solution.front()) {
+		 path.getCurrentBox()->setStatus(Status::PAST);
+		 solution.front()->setStatus(Status::ACTIVE);
+		 
+		 path.addBox(solution.front());
+		 solution.erase(solution.begin());
+		 return solution.front();
+	 }
+	 return NULL;
+ }
+
+ void Game::reset() {
+	 board.reset();
+	 path = board.getStartBox();
+ }
+
+void Game::changeMode(GameMode m) { mode = m; }
 void Game::update() {yoshi.update(); }
 
 void Game::buildSolution(Box* goal){
@@ -79,7 +101,8 @@ void Game::buildSolution(Box* goal){
 		i++;
 		node = node->getParent();
 	}
-	std::cout << "Tamaño de solucion final" << i;
+
+	//std::cout << "Tamaño de solucion final" << i;
 }
 
 void Game::solver() {
@@ -90,9 +113,9 @@ void Game::solver() {
 	int i = 0;
 	while (open.size() > 0) {
 		for (Box* node : open) {
-			std::cout << node->getSteps() << "\n";
+			//std::cout << node->getSteps() << "\n";
 			for (Directions dir : { N, NE, E, SE, S, SW, W, NW }) {
-				Box* child = board.getChildBox(node, dir);
+				Box* child = node->getChildBox(dir, true);
 				if (child != NULL) {
 					child->setParent(node);
 					if (child->getType() == Type::GOAL) return buildSolution(child);
@@ -101,7 +124,7 @@ void Game::solver() {
 			}
 		}
 		i++;
-		std::cout<< "\nNivel " << i << "\n";
+		//std::cout<< "\nNivel " << i << "\n";
 		open = aux;
 		aux.clear();
 	}

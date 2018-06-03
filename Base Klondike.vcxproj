@@ -131,6 +131,7 @@
     <ClCompile Include="core\KeyboardController.cpp" />
     <ClCompile Include="core\Lines.cpp" />
     <ClCompile Include="core\MouseController.cpp" />
+    <ClCompile Include="core\Path.cpp" />
     <ClCompile Include="core\Perspective.cpp" />
     <ClCompile Include="core\Texture.cpp" />
     <ClCompile Include="core\Window.cpp" />

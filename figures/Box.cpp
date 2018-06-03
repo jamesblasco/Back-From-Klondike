@@ -1,10 +1,8 @@
 #include "Box.h"
 #include "Board.h"
 #include "../core/Game.h"
-#include <string>
-#include <sstream>
-#include <string>
-#include <sstream>
+
+
 
 
 
@@ -23,14 +21,10 @@ void Box::setParent(Box * p){	parent = p;}
 Box * Box::getParent() { return parent; }
 
 void Box::draw() {
-	/*std::ostringstream oss;
-	oss << steps;
-	std::string var = oss.str().c_str();
-	glPrint(0, 0, 0, (char *)oss.str().c_str());*/
 	switch (type){
 		case Type::NORMAL:
 			switch (status) {
-				case Status::ACTIVE: glColor(Color(170, 255, 170, 0.5)); break;
+				case Status::ACTIVE:  glColor(Color(170, 255, 170, 0.5)); break;
 				case Status::PAST:   glColor(Color(150, 150, 150, 0.5)); break;
 				case Status::NONE: default:	return;
 			}
@@ -54,4 +48,55 @@ void Box::draw() {
 	
 	glFlush();
 }
+
+
+
+Box * Box::getChildBox(Directions direction, bool trackState) {
+	int steps = this->getSteps();
+
+	Position pos = this->getPosition();
+	Position newPos;
+
+	for (int i = 1; i <= steps; i++) {
+
+		switch (direction) {
+		case N: newPos = Position(pos.x, pos.y - i); break;
+		case NE: newPos = Position(pos.x + i, pos.y - i); break;
+		case E: newPos = Position(pos.x + i, pos.y); break;
+		case SE: newPos = Position(pos.x + i, pos.y + i); break;
+		case S: newPos = Position(pos.x, pos.y + i); break;
+		case SW: newPos = Position(pos.x - i, pos.y + i); break;
+		case W: newPos = Position(pos.x - i, pos.y); break;
+		case NW: newPos = Position(pos.x - i, pos.y - i); break;
+		default: return NULL;
+		}
+
+		Position from = Position(-11, -11);
+		Position to = Position(11, 11);
+
+		if (Position::isInsideArea(newPos, from, to)) {
+			Box * newBox = board->getBox(newPos.x, newPos.y);
+
+			if (newBox->getType() == Type::OUTSIDE) return NULL;
+			if (newBox->getType() == Type::GOAL && i != steps) return NULL;
+
+			if (i == steps) {
+				if (newBox->getState() == State::CHECKED && trackState) {
+					std::cout << "CHECKED \n ";
+					return NULL;
+				}
+				else {
+					std::cout << "UNCHECKED \n ";
+					newBox->setState(State::CHECKED);
+				}
+				
+				std::cout << " " << newBox->getSteps();
+
+				return newBox;
+			}
+		}
+	}
+	return NULL;
+}
+
 

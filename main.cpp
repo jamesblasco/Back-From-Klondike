@@ -3,7 +3,6 @@
 
 #include "core/Game.h"
 #include "core/Window.h"
-#include "core/Perspective.h"
 
 #include "core/MouseController.h"
 #include "core/KeyboardController.h"
@@ -63,12 +62,11 @@ void onDisplay() {
 
 
 	
-	button.updateStatus(&window);
-	button.render();
+
 	//lines.updateStatus(&window);
 	//lines.render();
 
-	Perspective::draw();
+	
 	Game::draw();
 	
 

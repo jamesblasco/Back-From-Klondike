@@ -9,7 +9,7 @@
 #include "../figures/Yoshi.h"
 
 
-
+enum class GameMode { AUTO, USER };
 
 static class Game {
 	private:
@@ -19,6 +19,7 @@ static class Game {
 		static Path path;
 		static void buildSolution(Box* goal);
 		static	std::list<Box *> solution;
+		static GameMode mode;
 		
 	public: 
 		static void solver();
@@ -26,6 +27,13 @@ static class Game {
 		static void draw();
 		static void update();
 		static Box * next(Directions direction);
+		static Box * nextStepInSolution();
+
+		static void reset();
+		static void changeMode(GameMode mode);
+		static bool isAutoMode() { return mode == GameMode::AUTO; };
+		static bool isUserMode() { return mode == GameMode::USER; };
+
 	
 } game;
 #endif

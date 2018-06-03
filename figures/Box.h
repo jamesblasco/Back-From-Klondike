@@ -19,7 +19,6 @@ class Box : public Figure {
 	Type type;
 	State state;
 	Box * parent;
-	
 
 public:
 	Box() {};
@@ -38,6 +37,8 @@ public:
 	Type getType() { return type; };
 	State getState() { return state; };
 	void setState(State state) { this->state = state; };
+
+	Box * getChildBox(Directions, bool = false);
 };
 
 #endif

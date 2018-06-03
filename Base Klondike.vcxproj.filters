@@ -105,6 +105,9 @@
     <ClCompile Include="figures\Algorithm.cpp">
       <Filter>Archivos de origen\figure</Filter>
     </ClCompile>
+    <ClCompile Include="core\Path.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="figures\Board.h">
