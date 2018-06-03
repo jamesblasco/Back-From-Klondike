@@ -37,7 +37,7 @@ void Box::draw() {
 			}
 			break;
 		case Type::GOAL:
-			glColor(Color(0, 255, 0, 1));
+			glColor(Color(90, 226, 48, 1));
 			break;
 		case Type::OUTSIDE:
 		default:
