@@ -66,8 +66,6 @@ void Board::draw() {
 
 	glEnd();
 	
-
-
 	glDepthMask(GL_TRUE);
 
 	glDisable(GL_TEXTURE_2D);
@@ -75,22 +73,10 @@ void Board::draw() {
 	// draw grid
 	 glColor3f(0.2f, 0.5f, 0.5f);
 
-	/*
-	glBegin(GL_LINES);
-	for (float i = -getHalbSize(); i <= getHalbSize(); i += getBoxSize()) {
-		glVertex3f(i, 0, -getHalbSize());
-		glVertex3f(i, 0, getHalbSize());
-
-		glVertex3f(getHalbSize(), 0, i);
-		glVertex3f(-getHalbSize(), 0, i);
-	}
-	glEnd();
-	*/
-
 	 glPushMatrix();
-
-	glTranslatef(-getHalbSize(), 2, -getHalbSize());
-	glTranslatef(getHalbBoxSize(), 2, getHalbBoxSize());
+	
+	glTranslatef(-getHalbSize(), 0.1, -getHalbSize());
+	glTranslatef(getHalbBoxSize(), 0, getHalbBoxSize());
 	for (int column = 0; column < SIZE; column++) {
 			for (int row = 0; row < SIZE; row++) {
 				boxs[column][row].draw();

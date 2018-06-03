@@ -9,6 +9,7 @@ using namespace std;
 Figure::Figure() {
 	this->pos = Position(0,0,0);
 	this->rot= Position(0, 0, 0);
+	jumpPos = 0;
 }
 
 Figure::Figure(float x, float y, float z) {
@@ -50,11 +51,9 @@ void Figure::rotate (Axis axis, float speed, float angle){
 }
 
 void Figure::jump(float distance, float speed) {
-	static float s = 0;
-	s += 0.005*speed;
-	
-	pos.y = distance*sin(s);
-	if (s>3.14) { s = 0; }
+	jumpPos += 0.005*speed;
+	pos.y = distance*sin(jumpPos);
+	if (jumpPos>3.14) { jumpPos = 0; }
 	glTranslatef(0, pos.y, 0);
 	
 }
