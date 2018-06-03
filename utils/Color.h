@@ -1,3 +1,7 @@
+//
+// Created by Jaime Blasco, Clara Landaríbar, Belén García on May 2018.
+// 
+
 
 #ifndef COLOR_H
 #define COLOR_H

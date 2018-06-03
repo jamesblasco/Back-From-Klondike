@@ -1,4 +1,7 @@
-
+//
+// Created by Jaime Blasco, Clara Landaríbar, Belén García on May 2018.
+// 
+// Includes the basic libraries
 
 #ifndef GL_CORE_H
 #define GL_CORE_H

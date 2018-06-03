@@ -1,3 +1,9 @@
+//
+// Open source library
+// Created by Rob Bateman on May 2005.
+// 
+
+
 #ifdef _WIN32
 	#include <windows.h>
 	#include <time.h>

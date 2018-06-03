@@ -1,7 +1,8 @@
 //------------------------------------------------------------------------------------
-///	\file	MD2_File.h
-///	\author	Rob Bateman [robthebloke@hotmail.com]
-/// \date	30-12-2004
+///	//
+// Open source library
+// Created by Rob Bateman on May 2005.
+// 
 ///	\brief	This file provides possibly the easiest way to load an MD2 file. The entire
 ///			file is loaded into memory and data is accessed by simply using pointer
 ///			offsets into the data. This makes the final MD2Model class a little less 

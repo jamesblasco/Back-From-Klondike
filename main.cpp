@@ -1,3 +1,7 @@
+//
+// Created by Jaime Blasco, Clara Landaríbar, Belén García on May 2018.
+// 
+
 
 #include "core/GLCore.h"
 
@@ -60,9 +64,6 @@ void onDisplay() {
 
 	glLoadIdentity();
 
-
-	
-
 	//lines.updateStatus(&window);
 	//lines.render();
 
@@ -76,10 +77,12 @@ void onDisplay() {
 		exit(1);
 	}
 
+	Game::update();
 	glutSwapBuffers();
 }
 
 void onIdle() {
+	//if(!Game::hasSolution()) Game::solve();
 	Game::update(); // update all instances animation
 	glutPostRedisplay();
 }

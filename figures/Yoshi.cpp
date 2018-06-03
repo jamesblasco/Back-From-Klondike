@@ -1,3 +1,7 @@
+//
+// Created by Jaime Blasco, Clara Landaríbar, Belén García on May 2018.
+// 
+
 
 #include "Yoshi.h"
 #include "../FrameTimer.h"
@@ -35,4 +39,19 @@ void Yoshi::draw() {
 
 void Yoshi::update() {
 	Update(FrameTime());
+}
+
+void Yoshi::setAnim(unsigned short anim)
+{
+	SetAnim(anim);
+}
+
+
+void Yoshi::changeAnim()
+{
+	unsigned short anim;
+	if (GetAnim() == 0) anim = 10;
+	else if (GetAnim() == 10) anim = 9;
+	else anim = 0;
+	SetAnim(anim);
 }

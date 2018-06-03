@@ -1,3 +1,9 @@
+//
+// Open source library
+// Created by Rob Bateman on May 2005.
+// 
+
+
 #include "MD2File.h"
 #include <assert.h>
 #include <stdio.h>

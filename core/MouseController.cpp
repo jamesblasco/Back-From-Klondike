@@ -1,5 +1,10 @@
+//
+// Created by Jaime Blasco, Clara Landaríbar, Belén García on May 2018.
+// 
+
 #include "MouseController.h"
 #include "Perspective.h"
+#include "Game.h"
 
 enum Mouse::Buttons Mouse::button;
 class Position2D Mouse::pos;
@@ -21,6 +26,7 @@ void Mouse::onClick(int button, int state, int x, int y) {
 	mouse.pos = Position(x, y);
 	mouse.button = (Buttons)button; //Button enumeration uses GL BUTTONS definitions
 	if (state != GLUT_DOWN) mouse.button = Buttons::NONE;
+	Game::update();
 	glutPostRedisplay();
 };
 
@@ -28,6 +34,7 @@ void Mouse::onClickMotion(int x, int y) {
 	Position diff = mouse.update(x, y);
 	if (mouse.button == Buttons::LEFT) 	perspective.move(diff);
 	else if (mouse.button == Buttons::RIGHT) perspective.rotate(diff);
+	Game::update();
 	glutPostRedisplay();
 }
 

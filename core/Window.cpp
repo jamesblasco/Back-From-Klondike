@@ -1,3 +1,7 @@
+//
+// Created by Jaime Blasco, Clara Landaríbar, Belén García on May 2018.
+// 
+
 #include "Window.h"
 #include "GLCore.h"
 
@@ -11,7 +15,7 @@ void Window::onResize(int w, int h) {
 	glViewport(0, 0, w, h);
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
-	gluPerspective(45, (float)w / h, 1, 1000);
+	gluPerspective(45, (float)w / h, 1, 10000);
 
 	//glOrtho(0.0f, w, h, 0.0f, -1.0f, 1.0f);
 	//std::cout << "prop:" << (float)w / h << "\n";

@@ -1,3 +1,8 @@
+//
+// Open source library
+// Created by Rob Bateman on May 2005.
+// 
+
 #ifndef GL_ADVANCED_FIGURE_H
 #define GL_ADVANCED_FIGURE_H
 
@@ -13,7 +18,7 @@
 
 
 /// sets the frames per second that the anims occur at
-#define MD2_FRAMES_PER_SEC 5
+#define MD2_FRAMES_PER_SEC 200
 
 //-----------------------------------------------------------------------	class MD2Model
 //
@@ -47,6 +52,7 @@ public:
 	/// \param	idx	-	the index of the anim to play
 	/// 
 	void SetAnim(unsigned short);
+	unsigned short GetAnim();
 
 	/// \brief	This function returns the name of the first frame of 
 	///			the specified animation, ie "run01"

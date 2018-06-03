@@ -1,13 +1,15 @@
+//
+// Created by Jaime Blasco, Clara Landaríbar, Belén García on May 2018.
+// 
+
 
 #include "Game.h"
 #include "Perspective.h"
-#include "../figures/Algorithm.h"
 #include "../figures/Clouds.h"
 #include <sstream>
 #include <string>
 #include <sstream>
 #include <string>
-
 
 Board Game::board;
 Yoshi Game::yoshi; 
@@ -27,8 +29,6 @@ void Game::draw() {
 
 	Box * current = path.getCurrentBox();
 	Position pos = current->getPosition();
-	
-	
 
 	glPushMatrix();
 	glTranslatef(-200, 150, -400);
@@ -66,32 +66,40 @@ void Game::draw() {
 	if(newBox) {
 		current->setStatus(Status::PAST);
 		newBox->setStatus(Status::ACTIVE);
+		yoshi.changeAnim();
+		if (newBox->getType() == Type::GOAL) yoshi.setAnim(7);
 		path.addBox(newBox);
 		return newBox;
 	} else return NULL;
 }
 
  Box * Game::nextStepInSolution(){
-
-	 std::cout << solution.size();
-	 if (solution.front()) {
+	 if (solution.size() != 0) {
 		 path.getCurrentBox()->setStatus(Status::PAST);
 		 solution.front()->setStatus(Status::ACTIVE);
-		 
+		 yoshi.changeAnim();
 		 path.addBox(solution.front());
 		 solution.erase(solution.begin());
+		 if(solution.size() == 0) yoshi.setAnim(7);
 		 return solution.front();
+	 } else {
+		 return NULL;
 	 }
-	 return NULL;
+	 
  }
 
  void Game::reset() {
 	 board.reset();
 	 path = board.getStartBox();
+	 yoshi.setAnim(0);
  }
 
 void Game::changeMode(GameMode m) { mode = m; }
-void Game::update() {yoshi.update(); }
+void Game::update() {
+	yoshi.update();
+	glutPostRedisplay();
+}
+
 
 void Game::buildSolution(Box* goal){
 	Box * node = goal;
@@ -105,7 +113,7 @@ void Game::buildSolution(Box* goal){
 	//std::cout << "Tamaño de solucion final" << i;
 }
 
-void Game::solver() {
+void Game::solve() {
 	std::list<Box*> open;
 	std::list<Box*> aux;
 

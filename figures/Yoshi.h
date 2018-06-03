@@ -1,3 +1,7 @@
+//
+// Created by Jaime Blasco, Clara Landaríbar, Belén García on May 2018.
+// 
+
 #ifndef YOSHI_H
 #define YOSHI_H
 
@@ -9,6 +13,8 @@ public:
 	void init();
 	void draw();
 	void update();
+	void setAnim(unsigned short);
+	void changeAnim();
 };
 
 

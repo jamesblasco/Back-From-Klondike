@@ -1,5 +1,10 @@
-#include "MD2Model.h"
+//
+// Open source library
+// Created by Rob Bateman on May 2005.
+// 
 
+
+#include "MD2Model.h"
 
 #define MD2_FRAME_RATE (1.0f/MD2_FRAMES_PER_SEC)
 
@@ -231,6 +236,10 @@ void MD2Model::SetAnim(unsigned short idx) {
 		m_CurrentAnim = idx;
 		m_AnimTime = 0;
 	}
+}
+
+unsigned short MD2Model::GetAnim() {
+	return m_CurrentAnim;
 }
 
 //---------------------------------------------------------------------------	MD2Model :: GetAnimName

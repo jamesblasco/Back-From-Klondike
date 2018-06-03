@@ -1,11 +1,10 @@
+//
+// Created by Jaime Blasco, Clara Landaríbar, Belén García on May 2018.
+// 
+
 #include "Box.h"
 #include "Board.h"
 #include "../core/Game.h"
-
-
-
-
-
 
 Box::Box(Board* board, int i, int j, int steps, Type type, Status status) {
 	this->board = board;

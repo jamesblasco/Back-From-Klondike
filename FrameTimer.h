@@ -1,3 +1,8 @@
+//
+// Open source library
+// Created by Rob Bateman on May 2005.
+// 
+
 
 #ifndef FRAMETIMER_H___
 #define FRAMETIMER_H___

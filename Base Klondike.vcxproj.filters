@@ -63,9 +63,6 @@
     <ClCompile Include="utils\Position.cpp">
       <Filter>Archivos de origen\utils</Filter>
     </ClCompile>
-    <ClCompile Include="utils\Position2D.cpp">
-      <Filter>Archivos de origen\utils</Filter>
-    </ClCompile>
     <ClCompile Include="core\Window.cpp">
       <Filter>Archivos de origen\core</Filter>
     </ClCompile>
@@ -101,9 +98,6 @@
     </ClCompile>
     <ClCompile Include="textures\pcxLoader.cpp">
       <Filter>Archivos de recursos</Filter>
-    </ClCompile>
-    <ClCompile Include="figures\Algorithm.cpp">
-      <Filter>Archivos de origen\figure</Filter>
     </ClCompile>
     <ClCompile Include="core\Path.cpp">
       <Filter>Archivos de origen</Filter>
@@ -155,9 +149,6 @@
     <ClInclude Include="core\KeyboardController.h">
       <Filter>Archivos de encabezado\core</Filter>
     </ClInclude>
-    <ClInclude Include="core\Lines.h">
-      <Filter>Archivos de encabezado\core</Filter>
-    </ClInclude>
     <ClInclude Include="core\MouseController.h">
       <Filter>Archivos de encabezado\core</Filter>
     </ClInclude>
@@ -184,12 +175,6 @@
     </ClInclude>
     <ClInclude Include="textures\pcxLoader.h">
       <Filter>Archivos de recursos</Filter>
-    </ClInclude>
-    <ClInclude Include="Header.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="figures\Algorithm.h">
-      <Filter>Archivos de encabezado\figures</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -1,3 +1,7 @@
+//
+// Created by Jaime Blasco, Clara Landaríbar, Belén García on May 2018.
+// 
+
 
 #include "KeyboardController.h"
 #include "Game.h"
@@ -8,10 +12,10 @@ enum Keyboard::Arrows Keyboard::arrows;
 void Keyboard::onKeyDown(unsigned char key, int x, int y) {
 
 	switch (key) {
-		case 'esc':
 		case ESC: exit(1);
-		case '1': game.reset(); game.solver(); game.changeMode(GameMode::AUTO); break;
+		case '1': game.reset(); game.solve(); game.changeMode(GameMode::AUTO); break;
 		case '2': game.reset();  game.changeMode(GameMode::USER); break;
+	
 	}
 	if (game.isUserMode()) {
 		switch (key) {
@@ -29,11 +33,12 @@ void Keyboard::onKeyDown(unsigned char key, int x, int y) {
 			case ' ': game.nextStepInSolution(); break;
 		}
 	}
-	
+	Game::update();
 	glutPostRedisplay();
 }
 
 void Keyboard::onArrowDown(int key, int x, int y) {
 	Keyboard::arrows = (Keyboard::Arrows)key;
+	Game::update();
 	glutPostRedisplay();
 }

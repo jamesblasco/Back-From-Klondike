@@ -1,3 +1,9 @@
+//
+// Open source library
+// Created by Rob Bateman on May 2005.
+// 
+
+
 #ifndef ROBS_PCX_LOADER___H_
 #define ROBS_PCX_LOADER___H_
 

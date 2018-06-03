@@ -4,13 +4,19 @@
 #include "../core/GLFigure.h"
 #include "Box.h"
 
-#define SIZE 23
+#define SIZE 23 // Number of boxes in a row or column
 
+//
+// Board
+//
+// Extends: Figure(is drawn with opengl), Texture (textures are used to draw it)
+// He is responsible for drawing the board and managing the boxes inside the board
+//
 class Board : public Figure, Texture {
-	int boxSize;
+	int boxSize; // Height and width of boxes
 public:
 
-	Box boxs[SIZE][SIZE];
+	Box boxs[SIZE][SIZE]; //Matrix containing each box
 
 	Board();
 	void init();

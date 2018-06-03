@@ -1,3 +1,7 @@
+//
+// Created by Jaime Blasco, Clara Landaríbar, Belén García on May 2018.
+// 
+
 #ifndef BOX_H
 #define BOX_H
 
@@ -7,7 +11,7 @@ class Board;
 
 enum class Status { NONE, ACTIVE, PAST }; // ACTIVE figure is above box, PAST figure was above box
 enum class Type { NORMAL, GOAL, OUTSIDE };
-enum class State { UNCHECKED, CHECKED };// For solver
+enum class State { UNCHECKED, CHECKED };// For solve
 enum Directions { N, NE, E, SE, S, SW, W, NW };
 
 

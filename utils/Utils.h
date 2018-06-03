@@ -1,3 +1,7 @@
+//
+// Created by Jaime Blasco, Clara Landaríbar, Belén García on May 2018.
+// 
+
 #ifndef UTILS_H
 #define UTILS_H
 
@@ -9,6 +13,6 @@
 #include "Position.h"
 #include "Position2D.h"
 
-
+void glPrint(int x, int y, int z, char *string);
 
 #endif

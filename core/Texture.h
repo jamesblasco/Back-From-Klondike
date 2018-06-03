@@ -1,16 +1,25 @@
+//
+// Created by Jaime Blasco, Clara Landaríbar, Belén García on May 2018.
+// 
+
 #ifndef TEXTURE_H
 #define TEXTURE_H
 
 #include "GLCore.h"
 
+//
+// Texture
+//
+// Allows to init, save and display textures
+//
 class Texture {
 protected:
-	GLuint texture;
+	GLuint texture; //Texture
 public:
-	void loadImageTexture(const char * filename, int width, int height);
-	void loadPcxTexture(const char* filename);
-	void loadSOILTexture(const char* filename);
+	void loadImageTexture(const char * filename, int width, int height);  //Load Bitmap texture
+	void loadPcxTexture(const char* filename); //Load PCX texture
+	void loadSOILTexture(const char* filename);  //Load PNG and other image format texture
 };
 
-void glPrint(int x, int y, int z, char *string);
+
 #endif

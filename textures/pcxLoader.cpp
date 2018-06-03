@@ -1,3 +1,8 @@
+//
+// Open source library
+// Created by Rob Bateman on May 2005.
+// 
+
 #include "pcxLoader.h"
 
 #pragma pack(push,1)
