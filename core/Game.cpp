@@ -11,18 +11,19 @@
 #include <sstream>
 #include <string>
 
+
+//Default initializers
 Board Game::board;
 Yoshi Game::yoshi; 
-GameMode Game::mode = GameMode::USER;
-Path Game::path = board.getStartBox();
-std::list<Box *> Game::solution = {};
-std::list<Figure *> Game::decorations = { new Clouds() };
+GameMode Game::mode = GameMode::USER; // Default GameMode - USER 
+Path Game::path = board.getStartBox(); // Init path with start box
+std::list<Box *> Game::solution = {}; 
+std::list<Figure *> Game::decorations = { new Clouds() }; // Init path with start box
 
 
 void Game::init() {
-	//for (Figure* figure : decorations) figure->init();
-	yoshi.init();
-	board.init();
+	yoshi.init(); // Init yoshi textures
+	board.init(); // Init board textures
 }
 
 void Game::draw() {
@@ -30,27 +31,31 @@ void Game::draw() {
 	Box * current = path.getCurrentBox();
 	Position pos = current->getPosition();
 
-	glPushMatrix();
-	glTranslatef(-200, 150, -400);
+	//Draw Info mode box
+		glPushMatrix();
+			glTranslatef(-200, 150, -400);
 	
-	glColor(Color(255, 255, 255, 0.5));
+			glColor(Color(255, 255, 255, 0.5));
 	
-	glBegin(GL_QUADS);
-		glTexCoord2f(0.0, 0.0); glVertex3f(-10, -10, 0);
-		glTexCoord2f(0.0, 1.0); glVertex3f(-10, 10, 0);
-		glTexCoord2f(1.0, 1.0); glVertex3f(120, 10, 0);
-		glTexCoord2f(1.0, 0.0); glVertex3f(120, -10, 0);
-	glEnd();
+			glBegin(GL_QUADS);
+				glTexCoord2f(0.0, 0.0); glVertex3f(-10, -10, 0);
+				glTexCoord2f(0.0, 1.0); glVertex3f(-10, 10, 0);
+				glTexCoord2f(1.0, 1.0); glVertex3f(120, 10, 0);
+				glTexCoord2f(1.0, 0.0); glVertex3f(120, -10, 0);
+			glEnd();
 
-	glTranslatef(10, -12, 20);
-	glColor(Color(25, 76, 25));
-	glPrint(0, 0, 0, (char *)(mode == GameMode::USER ? "USER MODE" : "SOLUTION MODE"));
+			glTranslatef(10, -12, 20);
+			glColor(Color(25, 76, 25));
+			glPrint(0, 0, 0, (char *)(mode == GameMode::USER ? "USER MODE" : "SOLUTION MODE"));
 
-	glPopMatrix();
+		glPopMatrix();
 
-	Perspective::draw();
+	
+	Perspective::draw(); //Draw perspective
 
-	yoshi.draw();
+	yoshi.draw(); //Draw yoshi
+	
+	//Draw board and decorations
 	glPushMatrix();
 		glTranslatef(-pos.x*board.getBoxSize(), 0, -pos.y*board.getBoxSize());
 		for (Figure* figure : decorations) figure->draw(); // first ones -- back

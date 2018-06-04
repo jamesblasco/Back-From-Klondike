@@ -7,6 +7,11 @@
 
 #include "../core/GLFigure.h"
 
+//
+// Cloud
+//
+// Decoration figure
+//
 class Cloud : public Figure {
 public:
 	void draw();

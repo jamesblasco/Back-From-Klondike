@@ -7,42 +7,72 @@
 
 #include "../core/GLFigure.h"
 
-class Board;
+class Board; 
 
-enum class Status { NONE, ACTIVE, PAST }; // ACTIVE figure is above box, PAST figure was above box
-enum class Type { NORMAL, GOAL, OUTSIDE };
-enum class State { UNCHECKED, CHECKED };// For solve
+// Status of box relative to the current path
+enum class Status { 
+	NONE,
+	ACTIVE, //Figure is above box
+	PAST //Figure has passed through here
+}; 
+
+// Difference type of class
+enum class Type { 
+	NORMAL, 
+	GOAL, //Box where you win
+	OUTSIDE   //Can not step inside
+}; 
+
+// Status of box relative to the resolution algorithm
+enum class State { UNCHECKED, CHECKED };
+
+// Cardinal points for indicate the directions to which the figure can go
 enum Directions { N, NE, E, SE, S, SW, W, NW };
 
 
+
+//
+// Box
+//
+// Extends: Figure(is drawn with opengl)
+// Each box has its steps and other properties to draw according to a goal box or has been passed over
+//
 class Box : public Figure {
-	Board* board;
-	Position pos; //Relative position
-	int steps;
-	Status status;
-	Type type;
-	State state;
-	Box * parent;
+	Board* board; // Pointer to board
+	Position pos; // Relative position on the board
+	int steps; // number of steps yoshi can take
+
+	Status status; // Status of box relative to the current path(NONE, ACTIVE, PAST)
+	Type type; // Difference type of class (NORMAL, GOAL, OUTSIDE)
+
+	//Used in resolution algorithm
+	State state; // Status of box relative to the resolution algorithm
+	Box * parent; // Parent box in resolution algorithm
+	
 
 public:
-	Box() {};
-	Box(Board* parent, int i = 0, int j = 0, int steps = 0, Type type = Type::NORMAL, Status status = Status::NONE);
+	Box() {}; //Default init
+	// Init board with default values
+	Box(Board* parent, int i = 0, int j = 0, int steps = 0, 
+		Type type = Type::NORMAL, Status status = Status::NONE); 
 
-	void draw();
+	void draw(); // Draw box on above board (Only for PAST, ACTIVE and GOAL boxes)
 
-	void setParent(Box*);
-	Box* getParent();
+	Position getPosition() { return pos; }; // Get relative position
+	void setPosition(Position pos) { this->pos = pos; }; // Set relative position
+	
+	Status getStatus() { return status; }; // Get status
+	void setStatus(Status status) { this->status = status; }; // Set status
 
-	Position getPosition() { return pos; };
-	void setPosition(Position pos) { this->pos = pos; };
-	Status getStatus() { return status; };
-	void setStatus(Status status) { this->status = status; };
-	int getSteps() { return steps; };
-	Type getType() { return type; };
-	State getState() { return state; };
-	void setState(State state) { this->state = state; };
-
-	Box * getChildBox(Directions, bool = false);
+	int getSteps() { return steps; }; // Get Steps
+	Type getType() { return type; }; // Get Type
+	
+	//Used in resolution algorithm
+	State getState() { return state; }; // Get current state
+	void setState(State state) { this->state = state; }; // Set current state
+	Box* getParent(); // Get parent box 
+	void setParent(Box*); // Set parent box 
+	Box * getChildBox(Directions, bool = false); // Get child box, bool used if want track the state
 };
 
 #endif

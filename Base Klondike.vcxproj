@@ -73,6 +73,8 @@
     <IncludePath>$(ProjectDir)include;$(IncludePath)</IncludePath>
     <LibraryPath>$(ProjectDir)libs;$(LibraryPath)</LibraryPath>
     <ReferencePath>$(VC_ReferencesPath_x86);$(ProjectDir)libs</ReferencePath>
+    <OutDir>$(SolutionDir)</OutDir>
+    <TargetName>klondike-windows</TargetName>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>

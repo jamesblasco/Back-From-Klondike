@@ -8,13 +8,20 @@
 #include "../core/GLFigure.h"
 #include "../MD2Model.h"
 
+//
+// Yoshi
+//
+// Main figure that allows specialized animations
+// Extends: Figure(is drawn with opengl), Texture (textures are used to draw it), 
+//          MD2Model(Open Source library for advanced openGL figures)
+//
 class Yoshi : public MD2Model, Figure, Texture {
 public:
-	void init();
-	void draw();
-	void update();
-	void setAnim(unsigned short);
-	void changeAnim();
+	void init(); // Init textures
+	void draw(); // Draw textures
+	void update(); // Update animations
+	void setAnim(unsigned short); // Set animation
+	void changeAnim(); // Change animation between defualts
 };
 
 

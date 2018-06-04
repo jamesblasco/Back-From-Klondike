@@ -7,10 +7,12 @@
 
 #include "../core/GLFigure.h"
 
+//
+// Cloud Group
+//
 class Clouds : public Figure, GroupFigure {
 public:
 	Clouds();
-	void init();
 	void draw();
 };
 

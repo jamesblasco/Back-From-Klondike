@@ -7,6 +7,11 @@
 
 #include "../core/GLFigure.h"
 
+//
+// Snowman
+//
+// Example figure
+//
 class Snowman : public Figure {
 public:
 	Snowman();

@@ -11,11 +11,6 @@
 #include "core/MouseController.h"
 #include "core/KeyboardController.h"
 
-#include "FrameTimer.h"
-
-#include "figures/Button.h"
-
-Button button;
 
 void onDisplay();
 void onIdle();
@@ -50,8 +45,6 @@ int main(int argc, char* argv[]) {
 	
 	Game::init();
 
-	InitFrameTimer(); // let the frame timer commence...
-
 	glutMainLoop();
 
 	return 0;
@@ -64,26 +57,12 @@ void onDisplay() {
 
 	glLoadIdentity();
 
-	//lines.updateStatus(&window);
-	//lines.render();
-
-	
 	Game::draw();
-	
-
-	GLenum err;
-	while ((err = glGetError()) != GL_NO_ERROR) {
-		std::cout << "OpenGL error: " << err;
-		exit(1);
-	}
-
 	Game::update();
+
 	glutSwapBuffers();
 }
 
-void onIdle() {
-	//if(!Game::hasSolution()) Game::solve();
-	Game::update(); // update all instances animation
-	glutPostRedisplay();
-}
+// update all instances animation
+void onIdle() { Game::update(); }
 

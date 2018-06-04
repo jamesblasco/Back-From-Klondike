@@ -5,6 +5,9 @@
 #include "Button.h"
 #include "../core/MouseController.h"
 
+
+
+
 void Button::draw() {
 	glTranslatef(0, 0, -5);
 
@@ -15,9 +18,7 @@ void Button::draw() {
 	glVertex3f(0.05, -0.05, 0.0);
 	glVertex3f(-0.05, -0.05, 0.0);
 	glEnd();
-	
 }
-
 
 void Button::updateStatus(Window* window) {
 	Position start = Position(0, 0, 0);

@@ -7,6 +7,7 @@
 #include "../FrameTimer.h"
 
 void Yoshi :: init () {
+	InitFrameTimer();
 	Load("tris.md2");
 	// write memory usage
 	std::cout << "memory usage " << (GetDataSize() / 1024.0f) << "kb\n";

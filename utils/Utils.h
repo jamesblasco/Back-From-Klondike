@@ -13,6 +13,7 @@
 #include "Position.h"
 #include "Position2D.h"
 
+// Print text on screen with opengl
 void glPrint(int x, int y, int z, char *string);
 
 #endif

@@ -14,6 +14,7 @@
 // Control when a key on the keyboard is pressed
 //
 static class Keyboard {
+	//Not used in production
 	static enum Arrows {
 		NONE,
 		LEFT = GLUT_KEY_LEFT, // LEFT ARROW

@@ -14,20 +14,23 @@
 //
 class Board : public Figure, Texture {
 	int boxSize; // Height and width of boxes
-public:
-
 	Box boxs[SIZE][SIZE]; //Matrix containing each box
+public:
+	
+	Board(); //Init board with default values and create each box
+	void init();  //Init textures
+	void draw(); // Draw board and boxes with openGL
+	void reset(); // Set default values again, clear searcher resolution algorithm state in boxes
 
-	Board();
-	void init();
-	void draw();
-	float getSize() { return boxSize * SIZE; };
-	float getBoxSize() { return (float)boxSize; };
-	float getHalbSize() { return boxSize * SIZE / 2; };
-	float getHalbBoxSize() { return (float)boxSize / 2; };
-	Box * getBox(int x, int y) { return &boxs[y + 11][x + 11]; };
-	Box * getStartBox() { return getBox(0, 0); };
-	void reset();
+	float getSize() { return boxSize * SIZE; }; // Get Board Size (Height == Width)
+	float getHalbSize() { return boxSize * SIZE / 2; }; // Get Board Size / 2 - Used for get center in board
+
+	float getBoxSize() { return (float)boxSize; }; // Get Box Size (Height == Width)
+	float getHalbBoxSize() { return (float)boxSize / 2; }; // Get Box Size / 2 - Used for get center in box
+	
+	Box * getBox(int x, int y) { return &boxs[y + 11][x + 11]; }; // Get Box from relative position
+	Box * getStartBox() { return getBox(0, 0); }; // Get Start Box 
+	
 
 };
 

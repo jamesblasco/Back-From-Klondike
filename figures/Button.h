@@ -8,6 +8,13 @@
 #include "../core/GLFigure.h"
 #include "../core/Window.h"
 
+
+//
+// Button
+//
+// Not used in production
+// Will allow to put buttons in the game with opengl
+//
 class Button : public Figure {
 public:
 	enum status { NONE, HOVER, PRESSED };
