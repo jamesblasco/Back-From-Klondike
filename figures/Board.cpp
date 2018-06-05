@@ -52,7 +52,7 @@ void Board::reset() {
 }
 
 
-void Board::init() { texture.loadSOILTexture("textures/board.png"); }
+void Board::init() { texture.loadSOILTexture("./textures/board.png"); }
 
 void Board::draw() {
 

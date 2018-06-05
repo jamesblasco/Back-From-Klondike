@@ -8,8 +8,8 @@
 
 void Yoshi :: init () {
 	InitFrameTimer();
-	Load("textures/tris.md2");
-	texture.loadPcxTexture("textures/yoshi.pcx");
+	Load("./textures/tris.md2");
+	texture.loadPcxTexture("./textures/yoshi.pcx");
 }
 
 void Yoshi::draw() {
