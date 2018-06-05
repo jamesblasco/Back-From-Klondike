@@ -1,7 +1,7 @@
 #include "Logo.h"
 
 //Load texture
-void Logo::init() {	texture.loadSOILTexture("./textures/logo.png");}
+void Logo::init() {	texture.loadSOILTexture("textures/logo.png");}
 
 //Draw logo
 void Logo::draw() {

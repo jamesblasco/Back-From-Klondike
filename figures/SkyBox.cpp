@@ -2,12 +2,12 @@
 
 //load textures
 void SkyBox::init() { 
-	textures[(int)SKY::BACK].loadTexBMP("./textures/skybox_back.bmp");
-	textures[(int)SKY::FRONT].loadTexBMP("./textures/skybox_front.bmp");
-	textures[(int)SKY::RIGHT].loadTexBMP("./textures/skybox_right.bmp");
-	textures[(int)SKY::LEFT].loadTexBMP("./textures/skybox_left.bmp");
-	textures[(int)SKY::UP].loadTexBMP("./textures/skybox_up.bmp");
-	textures[(int)SKY::DOWN].loadTexBMP("./textures/skybox_down.bmp");
+	textures[(int)SKY::BACK].loadTexBMP("textures/skybox_back.bmp");
+	textures[(int)SKY::FRONT].loadTexBMP("textures/skybox_front.bmp");
+	textures[(int)SKY::RIGHT].loadTexBMP("textures/skybox_right.bmp");
+	textures[(int)SKY::LEFT].loadTexBMP("textures/skybox_left.bmp");
+	textures[(int)SKY::UP].loadTexBMP("textures/skybox_up.bmp");
+	textures[(int)SKY::DOWN].loadTexBMP("textures/skybox_down.bmp");
 }
 
 void SkyBox::draw() {
