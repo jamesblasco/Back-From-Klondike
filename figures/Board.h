@@ -9,12 +9,13 @@
 //
 // Board
 //
-// Extends: Figure(is drawn with opengl), Texture (textures are used to draw it)
+// Extends: Figure(is drawn with opengl)
 // He is responsible for drawing the board and managing the boxes inside the board
 //
-class Board : public Figure, Texture {
+class Board : public Figure {
 	int boxSize; // Height and width of boxes
 	Box boxs[SIZE][SIZE]; //Matrix containing each box
+	Texture texture; // Texture (textures are used to draw it)
 public:
 	
 	Board(); //Init board with default values and create each box

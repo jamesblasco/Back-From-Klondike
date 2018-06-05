@@ -13,8 +13,12 @@
 // Decoration figure
 //
 class Cloud : public Figure {
+	float relative;
 public:
+	Cloud() {};
+	Cloud(float rel) { relative = rel; };
 	void draw();
+	float getRel() { return relative; };
 };
 
 

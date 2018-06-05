@@ -12,6 +12,7 @@
 #include "Color.h"
 #include "Position.h"
 #include "Position2D.h"
+#include "../core/GLCore.h"
 
 // Print text on screen with opengl
 void glPrint(int x, int y, int z, char *string);

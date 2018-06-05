@@ -5,9 +5,7 @@
 #include "Button.h"
 #include "../core/MouseController.h"
 
-
-
-
+//Draw button (not used)
 void Button::draw() {
 	glTranslatef(0, 0, -5);
 
@@ -20,6 +18,7 @@ void Button::draw() {
 	glEnd();
 }
 
+// (not being used)
 void Button::updateStatus(Window* window) {
 	Position start = Position(0, 0, 0);
 	Position cursor = mouse.pos;

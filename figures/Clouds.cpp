@@ -4,36 +4,19 @@
 
 #include "Clouds.h"
 #include "Cloud.h"
+#include <time.h> 
+#include <stdio.h> 
+#include <stdlib.h>  
 
+// Group of clouds init
 Clouds::Clouds() {
-	figures = { new Cloud(), new Cloud(), new Cloud(), new Cloud(),  new Cloud(), new Cloud(), new Cloud(), new Cloud(),  new Cloud(), new Cloud() };
+	srand(time(NULL));
+	figures = {};
+	//Create 50 clouds with random values
+	for (int i = 0; i < 50; i++) figures.push_back(new Cloud(rand() % 10000 / 1000.));
 }
 
 void Clouds::draw() {
-
-	int i = 0;
-	glPushMatrix();
-	for (Figure* figure : figures) {
-		switch (i%4){
-		default:
-			rotate(Y, 1, 40*(i%4));
-			case 0:
-				glTranslatef(15, 2, 0);
-				figure->rotate(Y, 0.0001);
-				break;
-			case 1:
-				glTranslatef(15, 10, 0);
-				break;
-			case 2:
-				glTranslatef(50, -12, 0);
-				figure->rotate(Y, 0.0001);
-				break;
-			break;
-		}
-
-		figure->draw();
-		i++;
-	}
-	glPopMatrix();
-
+	//Draws all figuress
+	for (Figure* figure : figures) figure->draw();
 }

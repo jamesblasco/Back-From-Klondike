@@ -3,6 +3,7 @@
 // Created by Rob Bateman on May 2005.
 // 
 
+#include "FrameTimer.h"
 
 #ifdef _WIN32
 	#include <windows.h>

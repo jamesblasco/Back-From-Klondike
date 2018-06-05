@@ -22,7 +22,6 @@ Position2D Mouse::update(int x, int y) {
 }
 
 void Mouse::onClick(int button, int state, int x, int y) {
-	//window.setCursor(x, y);
 	mouse.pos = Position(x, y);
 	mouse.button = (Buttons)button; //Button enumeration uses GL BUTTONS definitions
 	if (state != GLUT_DOWN) mouse.button = Buttons::NONE;
@@ -38,11 +37,10 @@ void Mouse::onClickMotion(int x, int y) {
 	glutPostRedisplay();
 }
 
-
 void Mouse::onMotion(int x, int y) { mouse.update(x, y); }
 
 
-
+//Not used
 Position Mouse::worldPosition(Position *start) {
 
 	double x, y, z;
@@ -67,29 +65,3 @@ Position Mouse::worldPosition(Position *start) {
 	return Position((float)x, (float)y, (float)z) - *start;
 }
 
-
-class PickingRay {
-private:
-	Position clickPosInWorld =  Position();
-	Position direction =  Position();
-
-	/**
-	* Computes the intersection of this ray with the X-Y Plane (where Z = 0)
-	* and writes it back to the provided vector.
-	*/
-public:
-	Position intersectionWithXyPlane()
-	{
-	
-		float s = -clickPosInWorld.z / direction.z;
-		return Position(clickPosInWorld.x + direction.x*s, clickPosInWorld.y + direction.y*s, 0);
-
-	}
-
-	Position getClickPosInWorld() {
-		return clickPosInWorld;
-	}
-	Position getDirection() {
-		return direction;
-	}
-};

@@ -4,7 +4,4 @@
 
 #include "Path.h"
 
-void Path::clear()
-{
-	path.clear();
-}
+void Path::clear(){ path.clear(); } // Clear path list

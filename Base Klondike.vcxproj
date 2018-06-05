@@ -131,7 +131,6 @@
     <ClCompile Include="core\Game.cpp" />
     <ClCompile Include="core\GLFigure.cpp" />
     <ClCompile Include="core\KeyboardController.cpp" />
-    <ClCompile Include="core\Lines.cpp" />
     <ClCompile Include="core\MouseController.cpp" />
     <ClCompile Include="core\Path.cpp" />
     <ClCompile Include="core\Perspective.cpp" />
@@ -142,15 +141,18 @@
     <ClCompile Include="figures\Button.cpp" />
     <ClCompile Include="figures\Cloud.cpp" />
     <ClCompile Include="figures\Clouds.cpp" />
+    <ClCompile Include="figures\Logo.cpp" />
+    <ClCompile Include="figures\SkyBox.cpp" />
     <ClCompile Include="figures\SnowMan.cpp" />
     <ClCompile Include="figures\Yoshi.cpp" />
-    <ClCompile Include="FrameTimer.cpp" />
+    <ClCompile Include="include\FrameTimer.cpp" />
+    <ClCompile Include="include\MD2File.cpp" />
+    <ClCompile Include="include\MD2Model.cpp" />
+    <ClCompile Include="include\pcxLoader.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="MD2File.cpp" />
-    <ClCompile Include="MD2Model.cpp" />
-    <ClCompile Include="textures\pcxLoader.cpp" />
     <ClCompile Include="utils\Color.cpp" />
     <ClCompile Include="utils\Position.cpp" />
+    <ClCompile Include="utils\Utils.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="core\Game.h" />
@@ -167,20 +169,18 @@
     <ClInclude Include="figures\Button.h" />
     <ClInclude Include="figures\Cloud.h" />
     <ClInclude Include="figures\Clouds.h" />
+    <ClInclude Include="figures\Logo.h" />
+    <ClInclude Include="figures\SkyBox.h" />
     <ClInclude Include="figures\Snowman.h" />
     <ClInclude Include="figures\Yoshi.h" />
-    <ClInclude Include="FrameTimer.h" />
-    <ClInclude Include="MD2File.h" />
-    <ClInclude Include="MD2Model.h" />
-    <ClInclude Include="textures\pcxLoader.h" />
+    <ClInclude Include="include\FrameTimer.h" />
+    <ClInclude Include="include\MD2File.h" />
+    <ClInclude Include="include\MD2Model.h" />
+    <ClInclude Include="include\pcxLoader.h" />
     <ClInclude Include="utils\Color.h" />
     <ClInclude Include="utils\Position.h" />
     <ClInclude Include="utils\Position2D.h" />
     <ClInclude Include="utils\Utils.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="tris.md2" />
-    <None Include="yoshi.pcx" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

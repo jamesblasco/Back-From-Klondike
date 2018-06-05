@@ -52,15 +52,13 @@ void Board::reset() {
 }
 
 
-void Board::init() { loadSOILTexture("board.png"); }
+void Board::init() { texture.loadSOILTexture("textures/board.png"); }
 
 void Board::draw() {
 
-	glPushMatrix();
-
 	glEnable(GL_TEXTURE_2D);
 	glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_REPLACE);
-	glBindTexture(GL_TEXTURE_2D, texture);
+	glBindTexture(GL_TEXTURE_2D, texture.get());
 
 	glDepthMask(GL_FALSE); //Make transparency
 	
@@ -94,10 +92,6 @@ void Board::draw() {
 		}
 	
 	glPopMatrix();
-	
-
-	glPopMatrix();
-
 }
 
 

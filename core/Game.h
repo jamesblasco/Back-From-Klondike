@@ -12,6 +12,8 @@
 #include "../figures/Board.h"
 #include "../figures/Box.h"
 #include "../figures/Yoshi.h"
+#include "../figures/SkyBox.h"
+#include "../figures/Logo.h"
 
 // User Modes  
 //	 AUTO: Show the solution
@@ -27,6 +29,8 @@ static class Game {
 		static Board board; // Texture and all squares
 		static Yoshi yoshi; // Main figure
 		static std::list<Figure *> decorations; // Other figures
+		static SkyBox skybox;
+		static Logo logo;
 		static Path path; // Path of passed boxes
 		static	std::list<Box *> solution; //Solution path
 		static GameMode mode; // User Modes (AUTO, USER)

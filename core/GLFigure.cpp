@@ -36,21 +36,15 @@ void Figure::move(float x, float y, float z, float speed){
 
 void Figure::rotate (Axis axis, float speed, float angle){
 	switch (axis) {
-		case X: {	
-			calculateRotation(&rot.x, speed, angle);
-			glRotatef(rot.x, 1, 0, 0);
-			break;
-		}
-		case Y: {
-			calculateRotation(&rot.y, speed, angle);
-			glRotatef(rot.y, 0, 1, 0);
-			break;
-		}
-		case Z: {
-			calculateRotation(&rot.z,speed, angle);
-			glRotatef(rot.z, 0, 0, 1);
-			break;
-		}
+		case X: calculateRotation(&rot.x, speed, angle);
+				glRotatef(rot.x, 1, 0, 0);
+				break;
+		case Y: calculateRotation(&rot.y, speed, angle);
+				glRotatef(rot.y, 0, 1, 0);
+				break;
+		case Z: calculateRotation(&rot.z,speed, angle);
+				glRotatef(rot.z, 0, 0, 1);
+				break;
 	}
 }
 
@@ -65,8 +59,8 @@ void Figure::jump(float distance, float speed) {
 
 void Figure::render() {
 	glPushMatrix();
-	glTranslatef(pos.x, pos.y, pos.z);
-	draw();
+		glTranslatef(pos.x, pos.y, pos.z);
+		draw();
 	glPopMatrix();
 }
 
