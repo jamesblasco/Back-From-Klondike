@@ -1,7 +1,10 @@
 
+
+# Back from the Klondike
+
 ![Screenshoot](./screenshot.png)
 
-# INTRODUCCIÓN
+## INTRODUCCIÓN
 
 El proyecto realizado se basa en el juego de estrategia Back from Klondike, en él se podrá jugar en modo manual o un
 modo automático que te va mostrando la solución. Todo el código esta escrito en inglés para dar continuidad al
@@ -33,7 +36,7 @@ las librerías
 Se facilita un **makefile** para compilar el proyecto. Acceda a la carpeta del proyecto a través del **terminal** y ejecute el
 siguiente comando
 
-```
+```bash
 $ make build-mac
 ```
 Se creará el ejecutable **klondike-mac** en la carpeta del proyecto. Si prefiere compilarlo manualmente compruebe
@@ -44,20 +47,20 @@ comparándolo con el makefile que añade las librerías y archivos necesarios
 Para compilar este programa es necesario tener GLUT instalado en el ordenador. Una forma rápida de hacerlo es a
 través del siguiente comando:
 
-```
+```bash
 $ sudo apt - get install freeglut3 - dev
 ```
 Se facilita un **makefile** para compilar el proyecto. Acceda a la carpeta del proyecto a través del **terminal** y ejecute el
 siguiente comando
 
-```
+```bash
 $ make build-linux
 ```
 Se creará el ejecutable **klondike-linux** en la carpeta del proyecto. Si prefiere compilarlo manualmente compruebe
 comparándolo con el makefile que añade las librerías y archivos necesarios
 
 
-# DIAGRAMA DE COMUNICACIÓN DE LAS FASES DEL JUEGO MÁS INTERESANTES
+## DIAGRAMA DE COMUNICACIÓN DE LAS FASES DEL JUEGO MÁS INTERESANTES
 
 Desde _main()_ se configura toda la parte gráfica de OpenGL y se añaden los _callbacks_ de las funciones principales de
 OpenGL, y se llama al método _init() de_ **_Game_** que carga las texturas.
@@ -74,7 +77,7 @@ En conclusión, Game es la clase principal del juego que gestiona por un lado la 
 básicas de OpenGL y por otro lado sus atributos establecen el estado en el que se encuentra el juego y sus métodos
 permiten modificar ese estado.
 
-# DESCRIPCIÓN GENERAL DE FUNCIONES Y ESTRUCTURAS MÁS REPRESENTATIVAS
+## DESCRIPCIÓN GENERAL DE FUNCIONES Y ESTRUCTURAS MÁS REPRESENTATIVAS
 
 Para permitir una mayor legibilidad se ha organizado la mayor parte del código en clases. Aunque se ha implementado
 varias funciones, main() es la más relevante.
@@ -84,7 +87,7 @@ _-_ **_Main()_**_._ Función origen que ejecuta las funciones básicas de configur
     inicializa la clase Game (Inicializaba las texturas).
 
 Muchas de las clases son estáticas ya que son clases que deben tener una única instancia accesible a través de todo el
-programa. Entre estas clases se encuentran por ejemplo **_Game_** _,_ **_Keyboard_** _,_ **_Mouse_** _,_ **_Window_** o **_Perspective_**.
+programa. Entre estas clases se encuentran por ejemplo `**_Game_**` _,_ **_Keyboard_** _,_ **_Mouse_** _,_ **_Window_** o **_Perspective_**.
 
 # DESCRIPCIÓN GENERAL DE LAS CLASES MÁS REPRESENTATIVAS
 
@@ -140,7 +143,7 @@ valores de los pasos correspondientes a cada casilla por pantalla. También se em
 revisando los estados de las casillas (revisado o sin revisar). Además, buscamos previamente la solución óptima y
 comprobamos que el algoritmo llegaba a la misma solución.
 
-# GUÍA DE USO DEL PROGRAMA EJECUTABLE
+## GUÍA DE USO DEL PROGRAMA EJECUTABLE
 
 Al ejecutar el juego, se abre una ventana que muestra un
 tablero con el jugador situado en la casilla de inicio. A
@@ -185,7 +188,7 @@ Con el **botón derecho** puede rotar la vista. En un MacBook función pulsando el
 Para cerrar el juego pulse la tecla **ESC**
 
 
-# PROPUESTAS DE MEJORA Y VALORACIÓN PERSONAL
+## PROPUESTAS DE MEJORA Y VALORACIÓN PERSONAL
 
 Algunas de las ideas que no ha dado tiempo a llevar a cabo son:
 
