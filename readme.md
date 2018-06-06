@@ -87,7 +87,7 @@ _-_ **_Main()_**_._ Función origen que ejecuta las funciones básicas de configur
     inicializa la clase Game (Inicializaba las texturas).
 
 Muchas de las clases son estáticas ya que son clases que deben tener una única instancia accesible a través de todo el
-programa. Entre estas clases se encuentran por ejemplo `**_Game_**` _,_ **_Keyboard_** _,_ **_Mouse_** _,_ **_Window_** o **_Perspective_**.
+programa. Entre estas clases se encuentran por ejemplo **_Game_** _,_ **_Keyboard_** _,_ **_Mouse_** _,_ **_Window_** o **_Perspective_**.
 
 # DESCRIPCIÓN GENERAL DE LAS CLASES MÁS REPRESENTATIVAS
 
