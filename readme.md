@@ -48,7 +48,7 @@ Para compilar este programa es necesario tener GLUT instalado en el ordenador. U
 través del siguiente comando:
 
 ```bash
-$ sudo apt - get install freeglut3 - dev
+$ sudo apt-get install freeglut3-dev
 ```
 Se facilita un **makefile** para compilar el proyecto. Acceda a la carpeta del proyecto a través del **terminal** y ejecute el
 siguiente comando
@@ -65,7 +65,7 @@ comparándolo con el makefile que añade las librerías y archivos necesarios
 Desde _main()_ se configura toda la parte gráfica de OpenGL y se añaden los _callbacks_ de las funciones principales de
 OpenGL, y se llama al método _init() de_ **_Game_** que carga las texturas.
 
-OpenGL llama al método **_dra_** _w()_ de Game cada vez que quiere pintar todas las figuras por pantalla y este se encarga de
+OpenGL llama al método **_draw()_** de Game cada vez que quiere pintar todas las figuras por pantalla y este se encarga de
 dibujar cada **_Figure_** y mostrar sus texturas y animaciones.
 
 Las clases **_Keyboard_** y **_Mouse_** tienen cada una un método que se ejecutan cuando se interacciona con el teclado o el
