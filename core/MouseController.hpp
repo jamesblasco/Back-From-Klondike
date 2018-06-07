@@ -5,8 +5,8 @@
 #ifndef MOUSE_H
 #define MOUSE_H
 
-#include "GLCore.h"
-#include "../utils/Utils.h"
+#include "GLCore.hpp"
+#include "../utils/Utils.hpp"
 
 //
 // Keyboard

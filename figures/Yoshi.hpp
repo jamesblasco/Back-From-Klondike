@@ -5,8 +5,8 @@
 #ifndef YOSHI_H
 #define YOSHI_H
 
-#include "../core/GLFigure.h"
-#include "../include/MD2Model.h"
+#include "../core/GLFigure.hpp"
+#include "../include/MD2Model.hpp"
 
 //
 // Yoshi

@@ -3,7 +3,7 @@
 // 
 
 
-#include "GLFigure.h"
+#include "GLFigure.hpp"
 #include <string.h>
 #include <iostream>
 

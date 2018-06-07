@@ -1,4 +1,4 @@
-#include "SkyBox.h"
+#include "SkyBox.hpp"
 
 //load textures
 void SkyBox::init() { 

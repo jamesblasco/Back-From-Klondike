@@ -5,7 +5,7 @@
 #ifndef BOX_H
 #define BOX_H
 
-#include "../core/GLFigure.h"
+#include "../core/GLFigure.hpp"
 
 class Board; 
 

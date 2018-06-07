@@ -3,8 +3,8 @@
 // 
 
 
-#include "KeyboardController.h"
-#include "Game.h"
+#include "KeyboardController.hpp"
+#include "Game.hpp"
 
 enum Keyboard::Arrows Keyboard::arrows;
 

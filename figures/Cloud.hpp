@@ -5,7 +5,7 @@
 #ifndef CLOUD_H
 #define CLOUD_H
 
-#include "../core/GLFigure.h"
+#include "../core/GLFigure.hpp"
 
 //
 // Cloud

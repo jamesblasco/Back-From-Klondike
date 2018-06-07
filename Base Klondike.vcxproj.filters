@@ -110,82 +110,82 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="figures\Board.h">
+    <ClInclude Include="figures\Board.hpp">
       <Filter>Archivos de encabezado\figures</Filter>
     </ClInclude>
-    <ClInclude Include="figures\Box.h">
+    <ClInclude Include="figures\Box.hpp">
       <Filter>Archivos de encabezado\figures</Filter>
     </ClInclude>
-    <ClInclude Include="figures\Button.h">
+    <ClInclude Include="figures\Button.hpp">
       <Filter>Archivos de encabezado\figures</Filter>
     </ClInclude>
-    <ClInclude Include="figures\Cloud.h">
+    <ClInclude Include="figures\Cloud.hpp">
       <Filter>Archivos de encabezado\figures</Filter>
     </ClInclude>
-    <ClInclude Include="figures\Clouds.h">
+    <ClInclude Include="figures\Clouds.hpp">
       <Filter>Archivos de encabezado\figures</Filter>
     </ClInclude>
-    <ClInclude Include="figures\Snowman.h">
+    <ClInclude Include="figures\Snowman.hpp">
       <Filter>Archivos de encabezado\figures</Filter>
     </ClInclude>
-    <ClInclude Include="figures\Yoshi.h">
+    <ClInclude Include="figures\Yoshi.hpp">
       <Filter>Archivos de encabezado\figures</Filter>
     </ClInclude>
-    <ClInclude Include="utils\Color.h">
+    <ClInclude Include="utils\Color.hpp">
       <Filter>Archivos de encabezado\utils</Filter>
     </ClInclude>
-    <ClInclude Include="utils\Position.h">
+    <ClInclude Include="utils\Position.hpp">
       <Filter>Archivos de encabezado\utils</Filter>
     </ClInclude>
-    <ClInclude Include="utils\Position2D.h">
+    <ClInclude Include="utils\Position2D.hpp">
       <Filter>Archivos de encabezado\utils</Filter>
     </ClInclude>
-    <ClInclude Include="utils\Utils.h">
+    <ClInclude Include="utils\Utils.hpp">
       <Filter>Archivos de encabezado\utils</Filter>
     </ClInclude>
-    <ClInclude Include="core\Game.h">
+    <ClInclude Include="core\Game.hpp">
       <Filter>Archivos de encabezado\core</Filter>
     </ClInclude>
-    <ClInclude Include="core\GLCore.h">
+    <ClInclude Include="core\GLCore.hpp">
       <Filter>Archivos de encabezado\core</Filter>
     </ClInclude>
-    <ClInclude Include="core\GLFigure.h">
+    <ClInclude Include="core\GLFigure.hpp">
       <Filter>Archivos de encabezado\core</Filter>
     </ClInclude>
-    <ClInclude Include="core\KeyboardController.h">
+    <ClInclude Include="core\KeyboardController.hpp">
       <Filter>Archivos de encabezado\core</Filter>
     </ClInclude>
-    <ClInclude Include="core\MouseController.h">
+    <ClInclude Include="core\MouseController.hpp">
       <Filter>Archivos de encabezado\core</Filter>
     </ClInclude>
-    <ClInclude Include="core\Path.h">
+    <ClInclude Include="core\Path.hpp">
       <Filter>Archivos de encabezado\core</Filter>
     </ClInclude>
-    <ClInclude Include="core\Perspective.h">
+    <ClInclude Include="core\Perspective.hpp">
       <Filter>Archivos de encabezado\core</Filter>
     </ClInclude>
-    <ClInclude Include="core\Window.h">
+    <ClInclude Include="core\Window.hpp">
       <Filter>Archivos de encabezado\core</Filter>
     </ClInclude>
-    <ClInclude Include="core\Texture.h">
+    <ClInclude Include="core\Texture.hpp">
       <Filter>Archivos de encabezado\core</Filter>
     </ClInclude>
-    <ClInclude Include="figures\SkyBox.h">
+    <ClInclude Include="figures\SkyBox.hpp">
       <Filter>Archivos de encabezado\figures</Filter>
     </ClInclude>
-    <ClInclude Include="figures\Logo.h">
+    <ClInclude Include="figures\Logo.hpp">
       <Filter>Archivos de encabezado\figures</Filter>
     </ClInclude>
-    <ClInclude Include="include\FrameTimer.h">
+    <ClInclude Include="include\FrameTimer.hpp">
       <Filter>Archivos de recursos</Filter>
     </ClInclude>
-    <ClInclude Include="include\MD2File.h">
+    <ClInclude Include="include\MD2File.hpp">
       <Filter>Archivos de recursos</Filter>
     </ClInclude>
-    <ClInclude Include="include\pcxLoader.h">
+    <ClInclude Include="include\pcxLoader.hpp">
       <Filter>Archivos de recursos</Filter>
     </ClInclude>
-    <ClInclude Include="include\MD2Model.h">
+    <ClInclude Include="include\MD2Model.hpp">
       <Filter>Archivos de recursos</Filter>
     </ClInclude>
   </ItemGroup>

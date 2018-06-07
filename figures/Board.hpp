@@ -1,8 +1,8 @@
 #ifndef BOARD_H
 #define  BOARD_H
 
-#include "../core/GLFigure.h"
-#include "Box.h"
+#include "../core/GLFigure.hpp"
+#include "Box.hpp"
 
 #define SIZE 23 // Number of boxes in a row or column
 

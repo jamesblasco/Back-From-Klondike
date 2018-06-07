@@ -2,13 +2,13 @@
 // Created by Jaime Blasco, Clara Landaríbar, Belén García on May 2018.
 // 
 
-#include "Texture.h"
-#include "glcore.h"
+#include "Texture.hpp"
+#include "glcore.hpp"
 #include <stdlib.h>
 #include <fstream>
 #include <iostream>
 #include <math.h>
-#include "../include/pcxLoader.h"
+#include "../include/pcxLoader.hpp"
 #include <SOIL/SOIL.h>
 
 

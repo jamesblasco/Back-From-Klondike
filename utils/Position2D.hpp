@@ -6,7 +6,7 @@
 #ifndef POSITION2_H
 #define POSITION2_H
 
-#include "Position.h"
+#include "Position.hpp"
 
 
 

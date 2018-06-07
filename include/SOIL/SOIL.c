@@ -30,10 +30,10 @@
 	#include <GL/glx.h>
 #endif
 
-#include "SOIL.h"
-#include "stb_image_aug.h"
-#include "image_helper.h"
-#include "image_DXT.h"
+#include "SOIL.hpp"
+#include "stb_image_aug.hpp"
+#include "image_helper.hpp"
+#include "image_DXT.hpp"
 
 #include <stdlib.h>
 #include <string.h>

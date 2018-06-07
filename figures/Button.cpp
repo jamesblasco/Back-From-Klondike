@@ -2,8 +2,8 @@
 // Created by Jaime Blasco, Clara Landaríbar, Belén García on May 2018.
 // 
 
-#include "Button.h"
-#include "../core/MouseController.h"
+#include "Button.hpp"
+#include "../core/MouseController.hpp"
 
 //Draw button (not used)
 void Button::draw() {

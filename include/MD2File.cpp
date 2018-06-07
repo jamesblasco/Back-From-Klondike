@@ -4,7 +4,7 @@
 // 
 
 
-#include "MD2File.h"
+#include "MD2File.hpp"
 #include <assert.h>
 #include <stdio.h>
 #include <iostream>

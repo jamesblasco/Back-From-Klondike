@@ -1,4 +1,4 @@
-#include "Logo.h"
+#include "Logo.hpp"
 
 //Load texture
 void Logo::init() {	texture.loadSOILTexture("textures/logo.png");}

@@ -3,8 +3,8 @@
 // 
 
 
-#include "Yoshi.h"
-#include "../include/FrameTimer.h"
+#include "Yoshi.hpp"
+#include "../include/FrameTimer.hpp"
 
 void Yoshi :: init () {
 	InitFrameTimer();

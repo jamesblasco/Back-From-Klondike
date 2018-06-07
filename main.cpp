@@ -3,13 +3,13 @@
 // 
 
 
-#include "core/GLCore.h"
+#include "core/GLCore.hpp"
 
-#include "core/Game.h"
-#include "core/Window.h"
+#include "core/Game.hpp"
+#include "core/Window.hpp"
 
-#include "core/MouseController.h"
-#include "core/KeyboardController.h"
+#include "core/MouseController.hpp"
+#include "core/KeyboardController.hpp"
 
 
 void onDisplay();

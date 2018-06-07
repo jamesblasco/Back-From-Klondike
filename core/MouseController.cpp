@@ -2,9 +2,9 @@
 // Created by Jaime Blasco, Clara Landaríbar, Belén García on May 2018.
 // 
 
-#include "MouseController.h"
-#include "Perspective.h"
-#include "Game.h"
+#include "MouseController.hpp"
+#include "Perspective.hpp"
+#include "Game.hpp"
 
 enum Mouse::Buttons Mouse::button;
 class Position2D Mouse::pos;

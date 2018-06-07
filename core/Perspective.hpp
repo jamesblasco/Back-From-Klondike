@@ -5,8 +5,8 @@
 #ifndef PERSPECTIVE_H
 #define PERSPECTIVE_H
 
-#include "GLCore.h"
-#include "../utils/Utils.h"
+#include "GLCore.hpp"
+#include "../utils/Utils.hpp"
 
 
 //

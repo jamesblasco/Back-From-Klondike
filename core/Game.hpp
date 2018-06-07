@@ -7,13 +7,13 @@
 #define GAME_H
 
 
-#include "GLFigure.h"
-#include "Path.h"
-#include "../figures/Board.h"
-#include "../figures/Box.h"
-#include "../figures/Yoshi.h"
-#include "../figures/SkyBox.h"
-#include "../figures/Logo.h"
+#include "GLFigure.hpp"
+#include "Path.hpp"
+#include "../figures/Board.hpp"
+#include "../figures/Box.hpp"
+#include "../figures/Yoshi.hpp"
+#include "../figures/SkyBox.hpp"
+#include "../figures/Logo.hpp"
 
 // User Modes  
 //	 AUTO: Show the solution

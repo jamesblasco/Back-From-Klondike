@@ -2,7 +2,7 @@
 // Created by Jaime Blasco, Clara Landaríbar, Belén García on May 2018.
 // 
 
-#include "Cloud.h"
+#include "Cloud.hpp"
 
 //Draw random cloud
 void Cloud::draw() {

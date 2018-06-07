@@ -3,7 +3,7 @@
 // Created by Rob Bateman on May 2005.
 // 
 
-#include "pcxLoader.h"
+#include "pcxLoader.hpp"
 
 #pragma pack(push,1)
 

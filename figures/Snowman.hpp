@@ -5,7 +5,7 @@
 #ifndef SNOWMAN_H
 #define SNOWMAN_H
 
-#include "../core/GLFigure.h"
+#include "../core/GLFigure.hpp"
 
 //
 // Snowman

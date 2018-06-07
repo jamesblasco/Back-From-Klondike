@@ -4,7 +4,7 @@
 // 
 
 
-#include "MD2Model.h"
+#include "MD2Model.hpp"
 
 #define MD2_FRAME_RATE (1.0f/MD2_FRAMES_PER_SEC)
 

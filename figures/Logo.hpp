@@ -1,7 +1,7 @@
 #ifndef LOGO_H
 #define  LOGO_H
 
-#include "../core/GLFigure.h"
+#include "../core/GLFigure.hpp"
 
 //
 // Logo

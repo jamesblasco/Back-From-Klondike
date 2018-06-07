@@ -9,10 +9,10 @@
 #define ESC 27
 #define PI 3.14159265
 
-#include "Color.h"
-#include "Position.h"
-#include "Position2D.h"
-#include "../core/GLCore.h"
+#include "Color.hpp"
+#include "Position.hpp"
+#include "Position2D.hpp"
+#include "../core/GLCore.hpp"
 
 // Print text on screen with opengl
 void glPrint(int x, int y, int z, char *string);

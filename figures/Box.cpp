@@ -2,9 +2,9 @@
 // Created by Jaime Blasco, Clara Landaríbar, Belén García on May 2018.
 // 
 
-#include "Box.h"
-#include "Board.h"
-#include "../core/Game.h"
+#include "Box.hpp"
+#include "Board.hpp"
+#include "../core/Game.hpp"
 
 //Default init
 Box::Box(Board* board, int i, int j, int steps, Type type, Status status) {

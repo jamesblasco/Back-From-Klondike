@@ -1,7 +1,7 @@
 #if 0
 #define GL_MANGLE_C1 "DO NOT EDIT!!! - TO REGENERATE from gl.h, EXECUTE THIS FILE IN SHELL (/bin/sh) and save the output"
 #define GL_MANGLE_C2 "This file is used to create GL function protypes and aliases for the function names"
-	files="gl.h glext.h"
+	files="gl.h glext.hpp"
 #define GL_MANGLE_C3 "get regeneration header - copy everything in this file above the 'REGENERATE_TO_END' line"
 	awk 	'!done; /^\/\*REGENERATE_TO_END/ {done=1}' $0
 	echo ""

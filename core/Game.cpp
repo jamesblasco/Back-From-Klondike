@@ -3,9 +3,9 @@
 // 
 
 
-#include "Game.h"
-#include "Perspective.h"
-#include "../figures/Clouds.h"
+#include "Game.hpp"
+#include "Perspective.hpp"
+#include "../figures/Clouds.hpp"
 #include <sstream>
 #include <string>
 #include <sstream>

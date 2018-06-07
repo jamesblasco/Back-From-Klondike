@@ -3,7 +3,7 @@
 // 
 
 
-#include "Board.h"
+#include "Board.hpp"
 
 
 const short steps[SIZE][SIZE] = {

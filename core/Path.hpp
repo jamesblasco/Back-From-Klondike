@@ -5,7 +5,7 @@
 #ifndef PATH_H
 #define PATH_H
 
-#include "../figures/Box.h"
+#include "../figures/Box.hpp"
 #include <list>
 
 //

@@ -14,7 +14,7 @@
 #include <assert.h>
 #include <stdlib.h>
 #include <GL/glut.h>
-#include "MD2File.h"
+#include "MD2File.hpp"
 
 
 /// sets the frames per second that the anims occur at

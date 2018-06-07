@@ -5,7 +5,7 @@
 #ifndef TEXTURE_H
 #define TEXTURE_H
 
-#include "GLCore.h"
+#include "GLCore.hpp"
 
 //
 // Texture

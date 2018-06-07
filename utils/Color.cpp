@@ -2,8 +2,8 @@
 // Created by Jaime Blasco, Clara Landaríbar, Belén García on May 2018.
 // 
 
-#include "Color.h"
-#include "../core/GLCore.h"
+#include "Color.hpp"
+#include "../core/GLCore.hpp"
 
 Color Color::WHITE = Color(255, 255, 255, 1);
 

@@ -7,7 +7,7 @@
 	public domain
 */
 
-#include "image_DXT.h"
+#include "image_DXT.hpp"
 #include <math.h>
 #include <stdlib.h>
 #include <string.h>

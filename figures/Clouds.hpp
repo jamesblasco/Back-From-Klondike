@@ -5,7 +5,7 @@
 #ifndef CLOUDS_H
 #define CLOUDS_H
 
-#include "../core/GLFigure.h"
+#include "../core/GLFigure.hpp"
 
 //
 // Cloud Group

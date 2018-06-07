@@ -5,8 +5,8 @@
 #ifndef BUTTON_H
 #define BUTTON_H
 
-#include "../core/GLFigure.h"
-#include "../core/Window.h"
+#include "../core/GLFigure.hpp"
+#include "../core/Window.hpp"
 
 
 //

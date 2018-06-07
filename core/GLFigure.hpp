@@ -5,9 +5,9 @@
 #ifndef FIGURE_H
 #define FIGURE_H
 
-#include "../utils/Utils.h"
-#include "GLCore.h"
-#include "Texture.h"
+#include "../utils/Utils.hpp"
+#include "GLCore.hpp"
+#include "Texture.hpp"
 #include <list>
 
 

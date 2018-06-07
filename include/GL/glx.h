@@ -33,7 +33,7 @@
 
 
 #if defined(USE_MGL_NAMESPACE)
-#include "glx_mangle.h"
+#include "glx_mangle.hpp"
 #endif
 
 

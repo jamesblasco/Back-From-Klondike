@@ -2,8 +2,8 @@
 // Created by Jaime Blasco, Clara Landaríbar, Belén García on May 2018.
 // 
 
-#include "Clouds.h"
-#include "Cloud.h"
+#include "Clouds.hpp"
+#include "Cloud.hpp"
 #include <time.h> 
 #include <stdio.h> 
 #include <stdlib.h>  

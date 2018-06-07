@@ -1,7 +1,7 @@
 #ifndef SKYBOX_H
 #define  SKYBOX_H
 
-#include "../core/GLFigure.h"
+#include "../core/GLFigure.hpp"
 //
 // Skybox
 //

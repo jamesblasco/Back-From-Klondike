@@ -32,7 +32,7 @@
 #define __glu_h__
 
 #if defined(USE_MGL_NAMESPACE)
-#include "glu_mangle.h"
+#include "glu_mangle.hpp"
 #endif
 
 #include <GL/gl.h>
